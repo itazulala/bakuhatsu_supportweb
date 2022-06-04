@@ -2,59 +2,70 @@
 
 .c-category-card {
 	background: #FFFFFF;
-    margin-bottom: 16px;
+	margin-bottom: 16px;
 	border: 1px solid #D9E7FF;
 	border-radius: 19px;
-	padding: 25px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 
-    &:last-child:after {
-        content: '';
-        margin-bottom: 0;
-    }
+	&:last-child:after {
+		content: '';
+		margin-bottom: 0;
+	}
 
-    &__firstlayer{
-        @include var.font-size(20);
-        font-weight: 700;
-        border-bottom: solid #000000;
-        border-image: var.$cotegory-border-color;
-        border-image-slice: 1;
-        border-image-width: 0 0 1px 0;
-        &__link{
-            line-height: 1.5;
-            @include var.font-size(21);
-            color: var.$primary-color;
-        }
-    }
-    
-    &__secondlayer{
-        color: var.$base-text-color;
+	&__wrapper {
+		max-width: 810px;
+		margin: 0 auto;
+	}
+
+	&__firstlayer {}
+
+	&__title {
+		@include var.font-size(20);
+		font-weight: 700;
+		border-bottom: solid #000000;
+		border-image: var.$cotegory-border-color;
+		border-image-slice: 1;
+		border-image-width: 0 0 1px 0;
+	}
+
+	&__firstlayer-link {
+		line-height: 1.5;
+		@include var.font-size(21);
+		color: var.$primary-color;
+	}
+
+	&__secondlayer {
+		color: var.$base-text-color;
 		margin-right: 14px;
 		@include var.font-size(16);
 		font-weight: 300;
+	}
 
-        &__container{
-            margin-top: 16px;
-        }
+	&__container {
+		margin-top: 16px;
+	}
 
-        &__item{
-            display: inline-block;
-            margin-top: 14px;
-            margin-left: 14px;
+	&__item {
+		display: inline-block;
+		margin-top: 14px;
+		margin-left: 14px;
 
-            width: auto;
-            &::after {
-                content: '>';
-                color: var.$primary-color;
-                margin-left: 14px;
-            }
-    
-            &:last-child:after {
-                content: '';
-                margin-left: 0;
-            }
-        }
-        &__link{
-            @include var.font-size(17);
-        }
-    }
+		width: auto;
+
+		&::after {
+			content: '>';
+			color: var.$primary-color;
+			margin-left: 14px;
+		}
+
+		&:last-child:after {
+			content: '';
+			margin-left: 0;
+		}
+	}
+
+	&__secondlayer-link {
+		@include var.font-size(17);
+	}
 }

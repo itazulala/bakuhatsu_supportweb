@@ -198,6 +198,12 @@ p:lang(en) {
   margin-right: auto;
 }
 
+.l-container {
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .l-header {
   width: 100%;
   background: #ffffff;
@@ -433,7 +439,7 @@ p:lang(en) {
   display: inline-block;
   background-color: #0c3898;
   position: absolute;
-  left: -20%;
+  left: -23%;
   top: 71%;
 }
 .c-section-title__subtext {
@@ -585,13 +591,18 @@ p:lang(en) {
   margin-bottom: 16px;
   border: 1px solid #D9E7FF;
   border-radius: 19px;
-  padding: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .c-category-card:last-child:after {
   content: "";
   margin-bottom: 0;
 }
-.c-category-card__firstlayer {
+.c-category-card__wrapper {
+  max-width: 810px;
+  margin: 0 auto;
+}
+.c-category-card__title {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: 700;
@@ -600,7 +611,7 @@ p:lang(en) {
   border-image-slice: 1;
   border-image-width: 0 0 1px 0;
 }
-.c-category-card__firstlayer__link {
+.c-category-card__firstlayer-link {
   line-height: 1.5;
   font-size: 21px;
   font-size: 1.3125rem;
@@ -613,25 +624,25 @@ p:lang(en) {
   font-size: 1rem;
   font-weight: 300;
 }
-.c-category-card__secondlayer__container {
+.c-category-card__container {
   margin-top: 16px;
 }
-.c-category-card__secondlayer__item {
+.c-category-card__item {
   display: inline-block;
   margin-top: 14px;
   margin-left: 14px;
   width: auto;
 }
-.c-category-card__secondlayer__item::after {
+.c-category-card__item::after {
   content: ">";
   color: #0c3898;
   margin-left: 14px;
 }
-.c-category-card__secondlayer__item:last-child:after {
+.c-category-card__item:last-child:after {
   content: "";
   margin-left: 0;
 }
-.c-category-card__secondlayer__link {
+.c-category-card__secondlayer-link {
   font-size: 17px;
   font-size: 1.0625rem;
 }
@@ -676,13 +687,11 @@ p:lang(en) {
   padding-top: 31px;
   background: #F1F5F9;
 }
-.p-category-faq__container {
+.p-category-faq__list {
   margin-top: 12px;
   padding-top: 36px;
   padding-bottom: 72px;
   border-top: 1px solid #0c3898;
-  padding-left: 12px;
-  padding-right: 12px;
 }
 .p-category-faq__column {
   margin-bottom: 21px;
