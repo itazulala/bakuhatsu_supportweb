@@ -11,8 +11,6 @@ urlpatterns = [
    path('', TopPage.as_view(), name='index'),
    path('faq/list', FaqList.as_view(), name='faq/list'),
    path('faq/detail', FaqDetail.as_view(), name='faq/detail'),
-   # path('blog/', include('blogs.urls')),
-   # path('accounts/', include('accounts.urls')),
-   # path('qa/', include('QA.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
- + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+   path('faq/', include('faq.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

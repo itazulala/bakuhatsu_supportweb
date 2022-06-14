@@ -29,7 +29,7 @@
             </p>
             <div class="c-faq-article__title-inner">
               <h2 class="c-faq-article__title">
-                {{ object.title }}
+                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
               </h2>
             </div>
           </div>
@@ -46,9 +46,9 @@
               >
             </p>
             <div class="c-faq-article__answer">
-              <div id="">
-                {{object.content|markdown|safe}}
-              </div>
+              <p>
+                回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。
+              </p>
             </div>
           </div>
         </div>
@@ -75,6 +75,53 @@
       </div>
     </article>
   </div>
+						<div class="c-faq-article__category-inner">
+							<span class="c-faq-article__category-tag">小カテゴリー1</span>
+							<span class="c-faq-article__category-tag">小カテゴリー1</span>
+							<span class="c-faq-article__category-tag">小カテゴリー1</span>
+							<span class="c-faq-article__category-tag">小カテゴリー1</span>
+						</div>
+					</div>
+				</div>
+				<div class="c-faq-article__middle">
+					<div class="c-faq-article__question-inner">
+						<p class="c-faq-article__subtitle-question-inner"data-english-title="Question"><span class="c-faq-article__subtitle c-faq-article__subtitle-question">質問</span></p>
+						<div class="c-faq-article__title-inner">
+							<h2 class="c-faq-article__title">{{ object.title }}</h2>
+						</div>
+					</div>
+				</div>
+				<div class="c-faq-article__bottom">
+					<div class="c-faq-article__answer-inner">
+						<p class="c-faq-article__subtitle-answer-inner"data-english-title="Answer"><span class="c-faq-article__subtitle c-faq-article__subtitle-answer">回答</span></p>
+						<div class="c-faq-article__answer">
+							<div id="content">{{object.content|markdown|safe}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="c-faq-article__like-container">
+					<div class="c-faq-article__button-inner">
+						<div class="c-faq-article__like-button">
+							<span class="c-faq-article__like-number"></span>
+						</div>
+						<span class="c-faq-article__like-text">参考になった</span>
+					</div>
+					<div class="c-faq-article__button-inner">
+						<div class="c-faq-article__like-button">
+							<span class="c-faq-article__good-icon"></span>
+						</div>
+						<span class="c-faq-article__good-text">いいねする</span>
+					</div>
+					<div class="c-faq-article__button-inner">
+						<div class="c-faq-article__like-button">
+							<span class="c-faq-article__good-icon"></span>
+						</div>
+						<span class="c-faq-article__bookmark-text">ブックマークする</span>
+					</div>
+			</div>
+		</article>
+	</div>
 </section>
 <section class="p-faq-request">
   <div class="p-faq-request__wrapper l-wrapper">

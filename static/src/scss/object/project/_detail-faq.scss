@@ -1,41 +1,187 @@
-@use '../../global/' as var;
+@@ -1,12 +1,14 @@
 
-.c-faq-detail{
-    &__wrapper {}
+@use '../../../global' as var;
 
-	&__container {
-		margin-top: 21px;
-		padding-top: 30px;
-		border-top: 1px solid var.$primary-color;
-		padding-left: 12px;
-		padding-right: 12px;
+.p-faq-detail {
+	margin-top: 29px;
+	background: #F7FAFF;
+	padding-top: 56px;
+
+	&__wrapper {}
+
+}
+
+.c-faq-article {
+	&__wrapper {
+		background: #fff;
+@ -14,11 +16,14 @@
+		padding: 48px 103px;
+		box-shadow: 0px 0px 10px #D9E7FF;
 	}
 
-    &__quiestion-header{
-        ::before{
+	&__top {}
 
-        }
+	&__information-inner {
+		display: flex;
+		align-items: center;
+	}
 
-        ::after{
+	&__rank {
+		font-weight: 300;
+		font-size: 14px;
+@ -26,6 +31,7 @@
+		color: #323232;
+		margin-right: 10px;
+	}
 
-        }
-    }
+	&__date {
+		font-weight: 300;
+		font-size: 14px;
+@ -33,10 +39,12 @@
+		color: #323232;
+		margin-right: 10px;
+	}
 
-    &__question-text{
+	&__category-inner {
+		display: flex;
+		align-items: center;
+	}
 
-    }
+	&__category-tag {
+		background: #F7FAFF;
+		border: 1px solid #F7FAFF;
+@ -48,13 +56,17 @@
+		padding: 4px 8px;
+		margin-right: 16px;
+	}
 
-    &__answer-header{
-        ::before{
+	&__middle {
+		margin-top: 8px;
+	}
 
-        }
+	&__question-inner {}
 
-        ::after{
+	&__subtitle-question-inner {
+		padding-bottom: .5rem;
+		border-bottom: 1px solid #0C3898;
 
-        }
-    }
+		&:after {
+			content: attr(data-english-title);
+			font-weight: 700;
+@ -62,6 +74,7 @@
+			color: rgba(12, 56, 152, 0.05);
+		}
+	}
 
-    &__answer-text{
+	&__subtitle-answer-inner {
+		padding-bottom: .5rem;
 
-    }
+@ -72,6 +85,7 @@
+			color: #FEF8F7;
+		}
+	}
+
+	&__subtitle {
+		display: inline;
+		font-weight: 600;
+@ -83,14 +97,17 @@
+		&-question {
+			background: #0C3898;
+		}
+
+		&-answer {
+			background: #F1795E;
+
+		}
+	}
+
+	&__title-inner {
+		margin-top: 23px;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 26px;
+@ -98,14 +115,18 @@
+		letter-spacing: 0.0145455em;
+		line-height: 1.3;
+	}
+
+	&__bottom {
+		margin-top: 8px;
+	}
+
+	&__answer-inner {}
+
+	&__answer {
+		background: #FEF8F7;
+		border-radius: 19px;
+		padding: 21px 27px;
+
+		p {
+			font-weight: 300;
+			font-size: 24px;
+@ -113,39 +134,51 @@
+			color: #323232;
+		}
+	}
+
+	&__like-container {
+		margin-top: 48px;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__button-inner {
+		margin-right: 58px;
+		text-align: center;
+	}
+	&__like-button{
+
+	&__button {
+		display: block;
+		border-radius: 50px;
+		box-shadow: 0px 0px 10px #D9E7FF;
+		width: 85px;
+		height: 85px;
+		background: #FFFFFF;
+		position: relative;
+		margin-bottom: 12px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&__button-text {
+		font-weight: 600;
+		font-size: 14px;
+		color: #323232;
+	}
+
+	&__like-number {
+		position: absolute;
+		font-weight: 700;
+		font-size: 31px;
+			color: #FFFFFF;
+		color: #0c3898;
+		top: 34%;
+		left: 19%;
+	}
+	&__like-text{
+		font-weight: 600;
+			font-size: 14px;
+			color: #323232;
+
+	&__good-icon {
+		content: url(/static/assets/images/good.svg);
+	}
+
+	&__bookmark-icon {
+		content: url(/static/assets/images/bookmark-pin.svg);
+	}
+	&__good-button{}
+	&__good-icon {}
+	&__good-text{}
+	&__bookmark-button{}
+	&__bookmark-icon{}
+	&__bookmark-text{}
 }
