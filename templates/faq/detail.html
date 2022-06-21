@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block link %}
+{% load markdown_extras %}
+{% block readscript %}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$', '$'], ["\\(", "\\)"]],
+    processEscapes: true
+  },
+  TeX: {
+    TagSide: "left",
+  }
+});
+</script>
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js"></script>
+{% endblock %}
+{% block readcss %}
 <link href="{% static 'mdeditor/css/editormd.min.css' %}" rel="stylesheet">
 <link href="{% static 'mdeditor/css/editormd.preview.css' %}" rel="stylesheet">
 {% endblock %}
-{% load markdown_extras %}
 {% block title %}よくある質問詳細{% endblock %}
 {% block breadcrumb %}
 <li class="l-breadcrumb__item">
@@ -23,27 +36,4 @@
 {% include 'keywordSearch.html' %}
 {% endblock %}
 {% block script %}
-<script src="{% static 'mdeditor/js/jquery.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/editormd.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/marked.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/prettify.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/raphael.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/underscore.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/sequence-diagram.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/flowchart.min.js' %}"></script>
-  <script src="{% static 'mdeditor/js/lib/jquery.flowchart.min.js' %}"></script>
-<script>
-  $(function () {
-      editormd.markdownToHTML("content", {
-          emoji           : true,
-          taskList        : true,
-          tex             : true,
-          flowChart       : true,
-          sequenceDiagram : true,
-      });
-      $(".reference-link").each(function (i,obj) {
-        console.log(obj)
-      })
-  })
-</script>
 {% endblock %}

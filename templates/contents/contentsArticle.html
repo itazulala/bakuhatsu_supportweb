@@ -1,4 +1,5 @@
 {% load static %}
+{% load markdown_extras %}
 <section class="p-contents-detail">
   <div class="p-contents-detail__wrapper l-wrapper">
     <article class="c-contents-article">
@@ -19,7 +20,7 @@
           <div class="c-contents-article__question-inner">
             <div class="c-contents-article__title-inner">
               <h2 class="c-contents-article__title">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
+                {{object.title}}
               </h2>
             </div>
           </div>
@@ -32,7 +33,7 @@
             </p>
             <div class="c-contents-article__text">
               <p>
-                回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。
+                {{object.content |markdown | safe}}
               </p>
             </div>
           </div>

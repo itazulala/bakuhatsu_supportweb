@@ -1,0 +1,66 @@
+[
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "cantera",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "OpenFOAM",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "化学",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "ERI-Explosion",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "実験",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "FLACS",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "Hardware",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  },
+  {
+    "model": "faq.Tag",
+    "fields": {
+      "name": "IMPETUS Afea Solver",
+      "created_at": "2020-01-01T10:00:00.000",
+      "updated_at": "2020-01-01T10:00:00.000"
+    }
+  }
+]

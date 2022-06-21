@@ -1,5 +1,4 @@
 {% load static %}
-{% load markdown_extras %}
 <section class="p-faq-detail">
   <div class="p-faq-detail__wrapper l-wrapper">
     <article class="c-faq-article">
@@ -46,9 +45,7 @@
               >
             </p>
             <div class="c-faq-article__answer">
-              <div id="">
                 {{object.content|markdown|safe}}
-              </div>
             </div>
           </div>
         </div>

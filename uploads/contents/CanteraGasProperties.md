@@ -52,14 +52,14 @@ mean\_molecular\_weight：平均分子量
   mean mol. weight   20.922 kg/kmol
    phase of matter   gas
 
-                          1 kg             1 kmol     
-                     ---------------   ---------------
-          enthalpy           -170.19           -3560.7  J
-   internal energy        -1.186e+05       -2.4813e+06  J
-           entropy            8780.4         1.837e+05  J/K
-    Gibbs function       -2.6167e+06       -5.4748e+07  J
- heat capacity c_p            1388.3             29046  J/K
- heat capacity c_v            990.91             20732  J/K
+                                     1 kg              1 kmol     
+                                    ---------------   ---------------
+               enthalpy       -170.19          -3560.7  J
+     internal energy       -1.186e+05    -2.4813e+06  J
+                 entropy       8780.4           1.837e+05  J/K
+     Gibbs function        -2.6167e+06  -5.4748e+07  J
+ heat capacity c_p      1388.3            29046  J/K
+ heat capacity c_v       990.91            20732  J/K
 
                       mass frac. Y      mole frac. X     chem. pot. / RT
                      ---------------   ---------------   ---------------

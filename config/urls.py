@@ -13,16 +13,11 @@ urlpatterns = [
    path('', TopPage.as_view(), name='index'),
    path('faq/list', FaqList.as_view(), name='faq/list'),
    path('faq/detail', FaqDetail.as_view(), name='faq/detail'),
-   path('contents/list', ContentsList.as_view(), name='contents/list'),
+   # path('contents/list', ContentsList.as_view(), name='contents/list'),
    path('contents/detail', ContentsDetail.as_view(), name='contents/detail'),
    path('faq/', include('faq.urls')),
    path('contents/', include('contents.urls')),
-   path('ckeditor/', include('ckeditor_uploader.urls')),
-   path('mdeditor/', include('mdeditor.urls')),
    path('markdownx/', include('markdownx.urls')),
-   # path('blog/', include('blogs.urls')),
-   # path('accounts/', include('accounts.urls')),
-   # path('qa/', include('QA.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

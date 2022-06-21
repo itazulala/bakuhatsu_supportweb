@@ -38,12 +38,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'contents.apps.ContentsConfig',
     'faq.apps.FaqConfig',
-    'mdeditor',
+    'markdownx',
 ]
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-MEDIA_ROOT = BASE_DIR / 'uploads'
-MEDIA_URL = '/media/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,3 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/media/'
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.toc',
+]
