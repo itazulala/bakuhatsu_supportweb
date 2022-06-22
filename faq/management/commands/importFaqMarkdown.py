@@ -1,11 +1,9 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from contents.models import MarkdownFile
-from contents.models import Article
-from contents.models import Category
-from contents.models import Tag
-from contents.consts import TAG_IDS
-from contents.consts import CATEGORY_IDS
+from faq.models import MarkdownFile
+from faq.models import Article
+from faq.models import Category
+from faq.models import Tag
 import yaml
 
 
@@ -35,8 +33,8 @@ class Command(BaseCommand):
                     json_obj = yaml.safe_load(yaml_header)
                     with transaction.atomic():
                         article = Article.objects.create(
-                            title=json_obj['title'],
-                            content=contents_text,
+                            question=json_obj['title'],
+                            answer=contents_text,
                             draft=json_obj['draft'],
                             category_id=Category.objects.get(name=json_obj['categories'][0]),
                             markdown_file_id=MarkdownFile.objects.get(id=markdown_file.id)
