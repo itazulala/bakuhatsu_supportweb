@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.db import models
 from markdownx.models import MarkdownxField
+from accounts.models import AccountRole
 from django.core.validators import FileExtensionValidator
 from pathlib import Path
 
@@ -36,9 +37,10 @@ class MarkdownFile(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=100)
     content = MarkdownxField()
-    draft = models.BooleanField()
+    draft = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag)
     category_id = models.ForeignKey(Category, on_delete=models.PROTECT)
+    account_role_id = models.ForeignKey(AccountRole, default=1, on_delete=models.PROTECT, related_name='contents_role')
     markdown_file_id = models.OneToOneField(MarkdownFile, on_delete=models.PROTECT)
     good_count = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
@@ -47,5 +49,5 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-
-
+    def article_list(self):
+        return self.Article.objects.select_related('tags').all()

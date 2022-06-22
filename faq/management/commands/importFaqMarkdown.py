@@ -37,7 +37,8 @@ class Command(BaseCommand):
                             answer=contents_text,
                             draft=json_obj['draft'],
                             category_id=Category.objects.get(name=json_obj['categories'][0]),
-                            markdown_file_id=MarkdownFile.objects.get(id=markdown_file.id)
+                            markdown_file_id=MarkdownFile.objects.get(id=markdown_file.id),
+                            created_at=json_obj['date']
                         )
 
                         article_tags = Article.objects.get(title=article)

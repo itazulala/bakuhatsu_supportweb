@@ -4,8 +4,6 @@ from contents.models import MarkdownFile
 from contents.models import Article
 from contents.models import Category
 from contents.models import Tag
-from contents.consts import TAG_IDS
-from contents.consts import CATEGORY_IDS
 import yaml
 
 
@@ -39,7 +37,8 @@ class Command(BaseCommand):
                             content=contents_text,
                             draft=json_obj['draft'],
                             category_id=Category.objects.get(name=json_obj['categories'][0]),
-                                markdown_file_id=MarkdownFile.objects.get(id=markdown_file.id)
+                            markdown_file_id=MarkdownFile.objects.get(id=markdown_file.id),
+                            created_at=json_obj['date']
                         )
 
                         article_tags = Article.objects.get(title=article)
