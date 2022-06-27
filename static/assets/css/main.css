@@ -1028,11 +1028,52 @@ p:lang(en) {
   border-radius: 19px;
   padding: 21px 27px;
 }
+.c-faq-article__answer h1 {
+  color: #F38A72;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.0145455em;
+}
+.c-faq-article__answer h2 {
+  color: #0C3898;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.0145455em;
+  border-bottom: 1px solid #0C3898;
+  padding: 16px 0;
+}
 .c-faq-article__answer p {
   font-weight: 300;
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.5;
   color: #323232;
+  letter-spacing: 0.0145455em;
+  margin-top: 5px;
+}
+.c-faq-article__answer .athJax {
+  margin: 0;
+  text-align: left;
+}
+.c-faq-article__answer img {
+  margin-top: 16px;
+}
+.c-faq-article__answer code {
+  font-family: Menlo, Monaco, "Lucida Console", Consolas, monospace;
+  font-size: 85%;
+  margin: 0;
+}
+.c-faq-article__answer pre {
+  margin: 16px 0;
+  overflow: auto;
+  color: #fff;
+  background: black;
+  padding: 13px 13px;
+  border: rgb(14, 164, 233) solid 1px;
+}
+.c-faq-article__answer pre code {
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: normal;
 }
 .c-faq-article__like-container {
   margin-top: 48px;
@@ -1261,16 +1302,57 @@ p:lang(en) {
 .c-contents-article__bottom {
   margin-top: 8px;
 }
-.c-contents-article__answer {
-  background: #FEF8F7;
+.c-contents-article__text {
   border-radius: 19px;
   padding: 21px 27px;
 }
-.c-contents-article__answer p {
-  font-weight: 300;
+.c-contents-article__text h1 {
+  color: #F38A72;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 1.2;
+  letter-spacing: 0.0145455em;
+}
+.c-contents-article__text h2 {
+  color: #0C3898;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.0145455em;
+  border-bottom: 1px solid #0C3898;
+  padding-bottom: 16px;
+  padding-top: 36px;
+}
+.c-contents-article__text p {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
   color: #323232;
+  letter-spacing: 0.0145455em;
+  margin-top: 5px;
+}
+.c-contents-article__text .athJax {
+  margin: 0;
+  text-align: left;
+}
+.c-contents-article__text img {
+  margin-top: 16px;
+}
+.c-contents-article__text code {
+  font-family: Menlo, Monaco, "Lucida Console", Consolas, monospace;
+  font-size: 85%;
+  margin: 0;
+}
+.c-contents-article__text pre {
+  margin: 16px 0;
+  overflow: auto;
+  color: #fff;
+  background: black;
+  padding: 13px 13px;
+  border: rgb(14, 164, 233) solid 1px;
+}
+.c-contents-article__text pre code {
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: normal;
 }
 .c-contents-article__like-container {
   margin-top: 48px;

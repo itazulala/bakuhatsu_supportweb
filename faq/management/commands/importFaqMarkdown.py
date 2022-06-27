@@ -1,11 +1,12 @@
 from django.core.management.base import BaseCommand
-from django.db import transaction, connection
-from pathlib import Path
-from contents.models import Article
-from contents.models import Category
-from contents.models import Tag
+from datetime import datetime
+from django.db import transaction
+from faq.models import MarkdownFile
+from faq.models import Article
+from faq.models import Category
+from faq.models import Tag
 import yaml
-import datetime
+
 
 class Command(BaseCommand):
     help = 'uploads/contents配下のmarkdownファイルのデータをDBにインポートします'
@@ -15,7 +16,6 @@ class Command(BaseCommand):
         parser.add_argument('-f', '--filepath', nargs='?', default='', type=str)
 
     def handle(self, *args, **options):
-
         try:
             if options['action'] != 'deleted':
                 with open(options['filepath'], encoding='utf-8') as file:
@@ -38,30 +38,29 @@ class Command(BaseCommand):
                     if options['action'] == 'created':
                         with transaction.atomic():
                             article = Article.objects.create(
-                                title=json_obj['title'],
-                                content=contents_text,
+                                question=json_obj['title'],
+                                answer=contents_text,
                                 file_path=file.name,
                                 draft=json_obj['draft'],
                                 category_id=Category.objects.get(name=json_obj['categories'][0]),
                                 created_at=json_obj['date']
                             )
 
-                            article_tags = Article.objects.get(title=article)
+                            article_tags = Article.objects.get(question=article)
                             for tag_name in json_obj['tags']:
                                 tag = Tag.objects.get(name=tag_name)
                                 article_tags.tags.add(tag)
 
                     elif options['action'] == 'modified':
-                        print(json_obj['categories'][0])
                         with transaction.atomic():
                             article = Article.objects.get(file_path=file.name)
-                            article.title = json_obj['title']
-                            article.content = contents_text
+                            article.question = json_obj['title']
+                            article.answer = contents_text
                             article.draft = json_obj['draft']
                             article.category_id = Category.objects.get(name=json_obj['categories'][0])
                             article.save()
 
-                            article_tags = Article.objects.get(title=article)
+                            article_tags = Article.objects.get(question=article)
                             for tag in article_tags.tags.all():
                                 article_tags.tags.remove(tag)
 
@@ -71,9 +70,7 @@ class Command(BaseCommand):
 
             else:
                 with transaction.atomic():
-                    article = Article.objects.get(file_path=Path(options['filepath']))
+                    article = Article.objects.get(file_path=options['filepath'])
                     article.delete()
-
         except Exception as e:
             print(e)
-
