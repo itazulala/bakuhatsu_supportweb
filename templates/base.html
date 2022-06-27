@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
+    {% block readcss %}{% endblock %}
+    {% block readscript %}{% endblock %}
   </head>
   <body>
     <header class="l-header">
@@ -24,17 +26,17 @@
         </h1>
         <nav class="l-header-nav">
           <ul class="l-header-nav__container">
+<!--            <li class="l-header-nav__item">-->
+<!--              <a href="" class="l-header-nav__link">メニュー名</a>-->
+<!--            </li>-->
+<!--            <li class="l-header-nav__item">-->
+<!--              <a href="" class="l-header-nav__link">メニュー名</a>-->
+<!--            </li>-->
             <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">メニュー名</a>
+              <a href="" class="l-header-nav__link">コンテンツ一覧</a>
             </li>
             <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">メニュー名</a>
-            </li>
-            <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">メニュー名</a>
-            </li>
-            <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">メニュー名</a>
+              <a href="" class="l-header-nav__link">よくある質問</a>
             </li>
             <li class="l-header-nav__item">
               <a class="c-button">ログイン</a>
@@ -86,23 +88,23 @@
               <a href="" class="l-footer__link">利用規約</a>
             </div>
             <div class="l-footer__item">
-              <a href="" class="l-footer__link">メニュー名</a>
+              <a href="" class="l-footer__link">サイトマップ</a>
             </div>
           </div>
-          <div class="l-footer__column">
-            <div class="l-footer__item">
-              <a href="" class="l-footer__link">メニュー名</a>
-            </div>
-            <div class="l-footer__item">
-              <a href="" class="l-footer__link">メニュー名</a>
-            </div>
-            <div class="l-footer__item">
-              <a href="" class="l-footer__link">メニュー名</a>
-            </div>
-            <div class="l-footer__item">
-              <a href="" class="l-footer__link">メニュー名</a>
-            </div>
-          </div>
+<!--          <div class="l-footer__column">-->
+<!--            <div class="l-footer__item">-->
+<!--              <a href="" class="l-footer__link">メニュー名</a>-->
+<!--            </div>-->
+<!--            <div class="l-footer__item">-->
+<!--              <a href="" class="l-footer__link">メニュー名</a>-->
+<!--            </div>-->
+<!--            <div class="l-footer__item">-->
+<!--              <a href="" class="l-footer__link">メニュー名</a>-->
+<!--            </div>-->
+<!--            <div class="l-footer__item">-->
+<!--              <a href="" class="l-footer__link">メニュー名</a>-->
+<!--            </div>-->
+<!--          </div>-->
           <div class="l-footer__column">
             <div class="l-footer__button-inner">
               <a href="" class="c-primary-button--fill">お問い合わせ</a>

@@ -1,27 +1,12 @@
-from django.shortcuts import render, redirect
-from django.views import View
+from django.views.generic import ListView
+from django.views.generic import FormView
+from faq.models import Article as faq
+from contents.models import Article as contents
 
 
-class TopPage(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'index.html')
+class TopPage(ListView):
+    model = faq
+    queryset = faq.objects.all().filter(draft=True)
+    template_name = 'index.html'
 
-
-class FaqList(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'faq/list.html')
-
-
-class FaqDetail(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'faq/detail.html')
-
-
-class ContentsList(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'contents/list.html')
-
-
-class ContentsDetail(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'contents/detail.html')
+    

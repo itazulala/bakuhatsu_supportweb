@@ -1,67 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-{% load markdown_extras %}
-<section class="p-contents-detail">
-  <div class="p-contents-detail__wrapper l-wrapper">
-    <article class="c-contents-article">
-      <div class="c-contents-article__wrapper">
-        <div class="c-contents-article__top">
-          <div class="c-contents-article__information-inner">
-            <span class="c-contents-article__rank">会員種別：テキスト？</span>
-            <time datetime="" class="c-contents-article__date">2022/05/06</time>
-            <div class="c-contents-article__category-inner">
-              <span class="c-contents-article__category-tag">#タグ1</span>
-              <span class="c-contents-article__category-tag">#タグ2</span>
-              <span class="c-contents-article__category-tag">#タグ3</span>
-              <span class="c-contents-article__category-tag">#タグ4</span>
-            </div>
-          </div>
-        </div>
-        <div class="c-contents-article__middle">
-          <div class="c-contents-article__question-inner">
-            <div class="c-contents-article__title-inner">
-              <h2 class="c-contents-article__title">
-                {{object.title}}
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="c-contents-article__bottom">
-          <div class="c-contents-article__answer-inner">
-            <p
-              class="c-contents-article__subtitle-answer-inner"
-            >
-            </p>
-            <div class="c-contents-article__text">
-              <p>
-                {{object.content |markdown | safe}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="c-contents-article__like-container">
-        <div class="c-contents-article__button-inner">
-          <button class="c-contents-article__button">
-            <span class="c-contents-article__like-number">113</span>
-          </button>
-          <span class="c-contents-article__button-text">参考になった</span>
-        </div>
-        <div class="c-contents-article__button-inner">
-          <button class="c-contents-article__button">
-            <span class="c-contents-article__good-icon"></span>
-          </button>
-          <span class="c-contents-article__button-text">いいねする</span>
-        </div>
-        <div class="c-contents-article__button-inner">
-          <button class="c-contents-article__button">
-            <span class="c-contents-article__bookmark-icon"></span>
-          </button>
-          <span class="c-contents-article__button-text">ブックマークする</span>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
+{% block title %}質問リクエスト{% endblock %}
+{% block breadcrumb %}
+<li class="l-breadcrumb__item">
+  <a href="" class="l-breadcrumb__link">HOME</a>
+</li>
+<li class="l-breadcrumb__item">
+  質問リクエスト
+</li>
+{% endblock %}
+{% block content %}
 <section class="p-faq-request">
   <div class="p-faq-request__wrapper l-wrapper">
     <h2 class="c-section-title" data-english-title="FAQ REQUEST">
@@ -134,3 +82,4 @@
     </div>
   </div>
 </section>
+{% endblock %}

@@ -1,4 +1,5 @@
 {% load static %}
+{% load markdown_extras %}
 <section class="p-faq-detail">
   <div class="p-faq-detail__wrapper l-wrapper">
     <article class="c-faq-article">
@@ -28,7 +29,7 @@
             </p>
             <div class="c-faq-article__title-inner">
               <h2 class="c-faq-article__title">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
+                {{ object.question }}
               </h2>
             </div>
           </div>
@@ -45,9 +46,7 @@
               >
             </p>
             <div class="c-faq-article__answer">
-              <p>
-                回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。回答内容が入ります。
-              </p>
+                {{object.answer|markdown|safe}}
             </div>
           </div>
         </div>

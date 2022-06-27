@@ -1,3 +1,4 @@
+{% load static %}
 <section class="p-contents-list">
   <div class="p-contents-list__wrapper l-wrapper">
     <h2 class="c-section-title" data-english-title="PICKUP FAQ">
@@ -7,22 +8,21 @@
       テキストが入ります。テキストが入ります。テキストが入ります。
     </p>
     <div class="p-pickup-faq__container">
+      {% for object in object_list %}
       <div class="p-pickup-faq__column">
         <article class="c-faq-card">
           <div class="c-faq-card__top">
             <span class="c-faq-card__title-q">Q</span>
             <h3 class="c-faq-card__title">
-              <a href="" class="c-faq-card__title-link">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
+              <a href="http://localhost:8000/faq/{{object.id}}/article/" class="c-faq-card__title-link">
+                {{ object.question }}
               </a>
             </h3>
           </div>
           <div class="c-faq-card__middle">
-            <span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span>
+            {% for tags in object.tags.all %}
+            <span class="c-faq-card__category-tag">#{{ tags.name }}</span>
+            {% endfor %}
           </div>
           <div class="c-faq-card__bottom">
             <div class="c-faq-card__like-container">
@@ -41,145 +41,6 @@
           </div>
         </article>
       </div>
-      <div class="p-pickup-faq__column">
-        <article class="c-faq-card">
-          <div class="c-faq-card__top">
-            <span class="c-faq-card__title-q">Q</span>
-            <h3 class="c-faq-card__title">
-              <a href="" class="c-faq-card__title-link">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
-              </a>
-            </h3>
-          </div>
-          <div class="c-faq-card__middle">
-            <span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span>
-          </div>
-          <div class="c-faq-card__bottom">
-            <div class="c-faq-card__like-container">
-              <span class="c-faq-card__like-number">113</span>
-              <span class="c-faq-card__like-text">参考になった</span>
-              <button class="c-faq-card__like">
-                <img src="{% static '/assets/images/good.svg' %}" alt="" />
-              </button>
-            </div>
-            <div class="c-faq-card__infomation-inner">
-							<span class="c-category-tag">Tutorial</span>
-              <span class="c-faq-card__rank">会員種別：テキスト？</span>
-              <time datetime="" class="c-faq-card__date">2022/05/06</time>
-              <a href="" class="c-faq-card__link">回答を読む</a>
-            </div>
-          </div>
-        </article>
-      </div>
-			<div class="p-pickup-faq__column">
-        <article class="c-faq-card">
-          <div class="c-faq-card__top">
-            <span class="c-faq-card__title-q">Q</span>
-            <h3 class="c-faq-card__title">
-              <a href="" class="c-faq-card__title-link">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
-              </a>
-            </h3>
-          </div>
-          <div class="c-faq-card__middle">
-            <span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span>
-          </div>
-          <div class="c-faq-card__bottom">
-            <div class="c-faq-card__like-container">
-              <span class="c-faq-card__like-number">113</span>
-              <span class="c-faq-card__like-text">参考になった</span>
-              <button class="c-faq-card__like">
-                <img src="{% static '/assets/images/good.svg' %}" alt="" />
-              </button>
-            </div>
-            <div class="c-faq-card__infomation-inner">
-							<span class="c-category-tag">Tutorial</span>
-              <span class="c-faq-card__rank">会員種別：テキスト？</span>
-              <time datetime="" class="c-faq-card__date">2022/05/06</time>
-              <a href="" class="c-faq-card__link">回答を読む</a>
-            </div>
-          </div>
-        </article>
-      </div>
-			<div class="p-pickup-faq__column">
-        <article class="c-faq-card">
-          <div class="c-faq-card__top">
-            <span class="c-faq-card__title-q">Q</span>
-            <h3 class="c-faq-card__title">
-              <a href="" class="c-faq-card__title-link">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
-              </a>
-            </h3>
-          </div>
-          <div class="c-faq-card__middle">
-            <span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span>
-          </div>
-          <div class="c-faq-card__bottom">
-            <div class="c-faq-card__like-container">
-              <span class="c-faq-card__like-number">113</span>
-              <span class="c-faq-card__like-text">参考になった</span>
-              <button class="c-faq-card__like">
-                <img src="{% static '/assets/images/good.svg' %}" alt="" />
-              </button>
-            </div>
-            <div class="c-faq-card__infomation-inner">
-							<span class="c-category-tag">Tutorial</span>
-              <span class="c-faq-card__rank">会員種別：テキスト？</span>
-              <time datetime="" class="c-faq-card__date">2022/05/06</time>
-              <a href="" class="c-faq-card__link">回答を読む</a>
-            </div>
-          </div>
-        </article>
-      </div>
-			<div class="p-pickup-faq__column">
-        <article class="c-faq-card">
-          <div class="c-faq-card__top">
-            <span class="c-faq-card__title-q">Q</span>
-            <h3 class="c-faq-card__title">
-              <a href="" class="c-faq-card__title-link">
-                質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。質問内容が入ります。...
-              </a>
-            </h3>
-          </div>
-          <div class="c-faq-card__middle">
-            <span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span
-            ><span class="c-faq-card__category-tag">#タグ01</span>
-          </div>
-          <div class="c-faq-card__bottom">
-            <div class="c-faq-card__like-container">
-              <span class="c-faq-card__like-number">113</span>
-              <span class="c-faq-card__like-text">参考になった</span>
-              <button class="c-faq-card__like">
-                <img src="{% static '/assets/images/good.svg' %}" alt="" />
-              </button>
-            </div>
-            <div class="c-faq-card__infomation-inner">
-							<span class="c-category-tag">Tutorial</span>
-              <span class="c-faq-card__rank">会員種別：テキスト？</span>
-              <time datetime="" class="c-faq-card__date">2022/05/06</time>
-              <a href="" class="c-faq-card__link">回答を読む</a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="p-pickup-faq__button-inner">
-        <a href="" class="c-primary-button">もっと見る</a>
-      </div>
+      {% endfor %}
     </div>
-  </div>
 </section>

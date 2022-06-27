@@ -124,17 +124,64 @@
 
 	&__answer-inner {}
 
-	&__answer {
-		background: #FEF8F7;
+	&__text {
 		border-radius: 19px;
 		padding: 21px 27px;
 
+        h1 {
+            color: #F38A72;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: 0.0145455em;
+
+        }
+		h2 {
+            color: #0C3898;
+            font-weight: 600;
+            font-size: 22px;
+            letter-spacing: 0.0145455em;
+			border-bottom: 1px solid #0C3898;
+			padding-bottom: 16px;
+			padding-top: 36px;
+		}
 		p {
 			font-weight: 300;
-			font-size: 24px;
-			line-height: 1.2;
+			font-size: 16px;
+			line-height: 1.5;
 			color: #323232;
+			letter-spacing: 0.0145455em;
+			margin-top: 5px;
 		}
+
+		.athJax {
+			margin: 0;
+			text-align: left;
+		}
+
+		img {
+			margin-top: 16px;
+		}
+
+		code {
+            font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+            font-size: 85%;
+            margin: 0;
+        }
+
+        pre {
+            margin: 16px 0;
+            overflow: auto;
+			color: #fff;
+			background: black;
+			padding: 13px 13px;
+			border:rgb(14, 164, 233) solid 1px;	
+        }
+
+        pre code {
+            padding: 0;
+            overflow: visible;
+            overflow-wrap: normal;
+        }
 	}
 
 	&__like-container {
