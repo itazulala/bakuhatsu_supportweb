@@ -10,14 +10,17 @@ target_dir = './uploads'
 # 監視対象ファイルのパターンマッチを指定する
 target_file = '*.md'
 # FAQファイルパターン
-pattern = '^FAQ-.+\.md'
+pattern = '^FAQ-.+\\.md$'
 
 
 class FileChangeHandler(PatternMatchingEventHandler):
-
+    """
+    upload配下のファイルを監視し、イベントを発行します。
+    """
     def __init__(self, patterns):
         super(FileChangeHandler, self).__init__(patterns=patterns)
 
+    # 作成イベント
     def on_created(self, event):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
@@ -27,6 +30,7 @@ class FileChangeHandler(PatternMatchingEventHandler):
             command_file = 'importContentsMarkdown'
         run(["python", "manage.py", command_file, "-a", "created", "-f" + filepath])
 
+    # 更新イベント
     def on_modified(self, event):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
@@ -37,6 +41,7 @@ class FileChangeHandler(PatternMatchingEventHandler):
             command_file = 'importContentsMarkdown'
         run(["python", "manage.py", command_file, "-a", "modified", "-f" + filepath])
 
+    # 削除イベント
     def on_deleted(self, event):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
