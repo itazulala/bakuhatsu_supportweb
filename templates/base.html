@@ -26,21 +26,16 @@
         </h1>
         <nav class="l-header-nav">
           <ul class="l-header-nav__container">
-<!--            <li class="l-header-nav__item">-->
-<!--              <a href="" class="l-header-nav__link">メニュー名</a>-->
-<!--            </li>-->
-<!--            <li class="l-header-nav__item">-->
-<!--              <a href="" class="l-header-nav__link">メニュー名</a>-->
-<!--            </li>-->
             <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">コンテンツ一覧</a>
+              <a href={% url "contents_list" %} class="l-header-nav__link">コンテンツ一覧</a>
             </li>
             <li class="l-header-nav__item">
-              <a href="" class="l-header-nav__link">よくある質問</a>
+              <a href={% url "faq_list" %} class="l-header-nav__link">よくある質問</a>
             </li>
-            <li class="l-header-nav__item">
+            <!--     TODO ログイン機能は初回リリースでは保留       -->
+            <!-- <li class="l-header-nav__item">
               <a class="c-button">ログイン</a>
-            </li>
+            </li> -->
           </ul>
         </nav>
       </div>

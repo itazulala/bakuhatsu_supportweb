@@ -7,7 +7,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 <script>
-<script>
   document.addEventListener("DOMContentLoaded", function() {
     renderMathInElement(document.body, {delimiters: [
       {left: "$$", right: "$$", display: true},
@@ -22,10 +21,10 @@
 {% block title %}よくある質問詳細{% endblock %}
 {% block breadcrumb %}
 <li class="l-breadcrumb__item">
-  <a href="" class="l-breadcrumb__link">HOME</a>
+  <a href={% url "index" %} class="l-breadcrumb__link">HOME</a>
 </li>
 <li class="l-breadcrumb__item">
-  <a href="" class="l-breadcrumb__link">よくある質問一覧</a>
+  <a href={% url "faq_list" %} class="l-breadcrumb__link">よくある質問一覧</a>
 </li>
 <li class="l-breadcrumb__item">
   よくある質問詳細

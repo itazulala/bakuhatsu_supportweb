@@ -1,15 +1,11 @@
 from django.core.management.base import BaseCommand
-from datetime import datetime
 from django.db import transaction
-from faq.models import MarkdownFile
-from faq.models import Article
-from faq.models import Category
-from faq.models import Tag
-import yaml
+from faq.models import Article, Category, Tag
+from yaml import safe_load
 
 
 class Command(BaseCommand):
-    help = 'uploads/contents配下のmarkdownファイルのデータをDBにインポートします'
+    help = 'markdownファイルをfaq_articleに登録します。'
 
     def add_arguments(self, parser):
         parser.add_argument('-a', '--action', nargs='?', default='', type=str)
@@ -33,7 +29,7 @@ class Command(BaseCommand):
                         yaml_header += line
                     del lines[0:end_row + 1]
                     contents_text = ''.join(lines)
-                    json_obj = yaml.safe_load(yaml_header)
+                    json_obj = safe_load(yaml_header)
 
                     if options['action'] == 'created':
                         with transaction.atomic():

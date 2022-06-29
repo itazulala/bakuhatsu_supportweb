@@ -7,13 +7,19 @@
 	padding: 25px;
 
 	&__top {
+		display: flex;
+	}
+
+	&__title-q {
+		font-size: 38px;
+		color: #C6C6C6;
+		margin-right: 14px;
 	}
 
 	&__title {
 		@include var.font-size(20);
 		font-weight: 600;
 		line-height: 1.5;
-		margin-top: 14px;
 
 		&:before {
 			content: attr(data-faq-title);
@@ -28,6 +34,7 @@
 
 	&__middle {
 		margin-top: 8px;
+		margin-left: 44px;
 	}
 
 	&__category-tag {
@@ -66,7 +73,6 @@
 	}
 
 	&__like {
-		vertical-align: sub;
 		img {
 			width: 89%;
 		}

@@ -1,46 +1,49 @@
 {% load static %}
-<section class="p-contents-list">
-  <div class="p-contents-list__wrapper l-wrapper">
-    <h2 class="c-section-title" data-english-title="PICKUP FAQ">
-      注目のQ＆A
-    </h2>
-    <p class="c-section-title__subtext">
-      テキストが入ります。テキストが入ります。テキストが入ります。
-    </p>
-    <div class="p-pickup-faq__container">
-      {% for object in object_list %}
-      <div class="p-pickup-faq__column">
-        <article class="c-faq-card">
-          <div class="c-faq-card__top">
-            <span class="c-faq-card__title-q">Q</span>
-            <h3 class="c-faq-card__title">
-              <a href="http://localhost:8000/faq/{{object.id}}/article/" class="c-faq-card__title-link">
-                {{ object.question }}
-              </a>
-            </h3>
-          </div>
-          <div class="c-faq-card__middle">
-            {% for tags in object.tags.all %}
-            <span class="c-faq-card__category-tag">#{{ tags.name }}</span>
-            {% endfor %}
-          </div>
-          <div class="c-faq-card__bottom">
-            <div class="c-faq-card__like-container">
-              <span class="c-faq-card__like-number">113</span>
-              <span class="c-faq-card__like-text">参考になった</span>
-              <button class="c-faq-card__like">
-                <img src="{% static '/assets/images/good.svg' %}" alt="" />
-              </button>
+<section class="p-pickup-faq">
+    <div class="p-pickup-faq__wrapper l-wrapper">
+        <h2 class="c-section-title" data-english-title="PICKUP FAQ">
+            よくある質問
+        </h2>
+        <p class="c-section-title__subtext">
+            テキストが入ります。テキストが入ります。テキストが入ります。
+        </p>
+        <div class="p-pickup-faq__background">
+            <div class="p-pickup-faq__container">
+                {% for object in object_list %}
+                <div class="p-pickup-faq__column">
+                    <article class="c-contents-card">
+                        <div class="c-contents-card__top">
+                            <div class="c-contents-card__infomation-inner">
+                                <span class="c-category-tag">{{ object.category_id.name }}</span>
+                                <!--                                <span class="c-contents-card__rank">会員種別：テキスト？</span>-->
+                                <time datetime="" class="c-contents-card__date">{{ object.created_at|date:"Y/n/j" }}</time>
+                            </div>
+                            <h3 class="c-contents-card__title">
+                                <a href="http://localhost:8000/faq/{{object.id}}/article/"
+                                    class="c-contents-card__title-link">
+                                    {{ object.question }}
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="c-contents-card__middle">
+                            {% for tags in object.tags.all %}
+                            <span class="c-contents-card__category-tag">#{{ tags.name }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="c-contents-card__bottom">
+                            <div class="c-contents-card__like-container">
+                                <!-- <span class="c-contents-card__like-number">{{ object.good_count }}</span> -->
+                                <!--                                <span class="c-contents-card__like-text">参考になった</span>-->
+                                <!--                                <button class="c-contents-card__like">-->
+                                <!--                                    <img src="{% static '/assets/images/good.svg' %}" alt=""/>-->
+                                <!--                                </button>-->
+                            </div>
+                            <a href="" class="c-contents-card__link">回答を読む</a>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
             </div>
-            <div class="c-faq-card__infomation-inner">
-							<span class="c-category-tag">Tutorial</span>
-              <span class="c-faq-card__rank">会員種別：テキスト？</span>
-              <time datetime="" class="c-faq-card__date">2022/05/06</time>
-              <a href="" class="c-faq-card__link">回答を読む</a>
-            </div>
-          </div>
-        </article>
-      </div>
-      {% endfor %}
+        </div>
     </div>
 </section>

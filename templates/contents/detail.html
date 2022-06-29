@@ -17,10 +17,10 @@
 {% block title %}コンテンツタイトル{% endblock %}
 {% block breadcrumb %}
 <li class="l-breadcrumb__item">
-  <a href="" class="l-breadcrumb__link">HOME</a>
+  <a href={% url "index" %} class="l-breadcrumb__link">HOME</a>
 </li>
 <li class="l-breadcrumb__item">
-  <a href="" class="l-breadcrumb__link">コンテンツ一覧</a>
+  <a href={% url "contents_list" %} class="l-breadcrumb__link">コンテンツ一覧</a>
 </li>
 <li class="l-breadcrumb__item">
   コンテンツタイトル

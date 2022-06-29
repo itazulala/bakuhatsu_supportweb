@@ -7,7 +7,7 @@ from .views import TopPage
 urlpatterns = [
    path('admin/', admin.site.urls),
    path('', TopPage.as_view(), name='index'),
-   path('requestform/', TopPage.as_view(), name='index'),
+   # path('requestform/', TopPage.as_view(), name='index'),
    path('faq/', include('faq.urls')),
    path('contents/', include('contents.urls')),
    path('markdownx/', include('markdownx.urls')),

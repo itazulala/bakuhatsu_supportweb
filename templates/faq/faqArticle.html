@@ -6,13 +6,12 @@
       <div class="c-faq-article__wrapper">
         <div class="c-faq-article__top">
           <div class="c-faq-article__information-inner">
-            <span class="c-faq-article__rank">会員種別：テキスト？</span>
-            <time datetime="" class="c-faq-article__date">2022/05/06</time>
+            <!-- <span class="c-faq-article__rank">会員種別：テキスト？</span> -->
+            <time datetime="" class="c-faq-article__date">{{ object.created_at|date:"Y/n/j" }}</time>
             <div class="c-faq-article__category-inner">
-              <span class="c-faq-article__category-tag">小カテゴリー1</span>
-              <span class="c-faq-article__category-tag">小カテゴリー1</span>
-              <span class="c-faq-article__category-tag">小カテゴリー1</span>
-              <span class="c-faq-article__category-tag">小カテゴリー1</span>
+              {% for tag in object.tags.all %}
+                <span class="c-faq-article__category-tag">{{ tag.name }}</span>
+              {% endfor %}
             </div>
           </div>
         </div>

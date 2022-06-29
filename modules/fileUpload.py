@@ -1,9 +1,8 @@
-from watchdog.observers import Observer
 from watchdog.observers.polling import PollingObserver
 from watchdog.events import PatternMatchingEventHandler
 from subprocess import run
 from pathlib import Path
-import re
+from re import compile
 import time
 
 # 監視対象ディレクトリを指定する
@@ -22,7 +21,7 @@ class FileChangeHandler(PatternMatchingEventHandler):
     def on_created(self, event):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
-        if re.compile(pattern).match(filename):
+        if compile(pattern).match(filename):
             command_file = 'importFaqMarkdown'
         else:
             command_file = 'importContentsMarkdown'
@@ -32,7 +31,7 @@ class FileChangeHandler(PatternMatchingEventHandler):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
         print('%s modified' % filepath)
-        if re.compile(pattern).match(filename):
+        if compile(pattern).match(filename):
             command_file = 'importFaqMarkdown'
         else:
             command_file = 'importContentsMarkdown'
@@ -42,7 +41,7 @@ class FileChangeHandler(PatternMatchingEventHandler):
         filename = Path(event.src_path).name
         filepath = str(Path(event.src_path))
         print('%s deleted' % filepath)
-        if re.compile(pattern).match(filename):
+        if compile(pattern).match(filename):
             command_file = 'importFaqMarkdown'
         else:
             command_file = 'importContentsMarkdown'

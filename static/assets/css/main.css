@@ -522,19 +522,12 @@ p:lang(en) {
   border-radius: 19px;
   padding: 25px;
 }
-.c-faq-card__top {
-  display: flex;
-}
-.c-faq-card__title-q {
-  font-size: 38px;
-  color: #C6C6C6;
-  margin-right: 14px;
-}
 .c-faq-card__title {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
+  margin-top: 14px;
 }
 .c-faq-card__title:before {
   content: attr(data-faq-title);
@@ -545,7 +538,6 @@ p:lang(en) {
 }
 .c-faq-card__middle {
   margin-top: 8px;
-  margin-left: 44px;
 }
 .c-faq-card__category-tag {
   font-weight: 300;
@@ -575,6 +567,9 @@ p:lang(en) {
   font-size: 16px;
   color: #323232;
   margin-right: 18px;
+}
+.c-faq-card__like {
+  vertical-align: sub;
 }
 .c-faq-card__like img {
   width: 89%;
@@ -781,6 +776,12 @@ p:lang(en) {
   margin-right: 12px;
   margin-top: 18px;
   width: auto;
+}
+.c-repetition_keywords__item ::before {
+  content: attr(data-tag-style);
+  font-weight: 700;
+  font-size: 70px;
+  color: blue;
 }
 .c-repetition_keywords__link {
   text-align: center;
@@ -1040,7 +1041,8 @@ p:lang(en) {
   font-size: 22px;
   letter-spacing: 0.0145455em;
   border-bottom: 1px solid #0C3898;
-  padding: 16px 0;
+  padding-bottom: 16px;
+  padding-top: 36px;
 }
 .c-faq-article__answer p {
   font-weight: 300;

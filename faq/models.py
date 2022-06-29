@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.db.models import Q
 from django.utils import timezone
 from django.db import models
 from markdownx.models import MarkdownxField
@@ -49,6 +50,17 @@ class Article(models.Model):
 
     def __str__(self):
         return self.question
+
+    def get_queryset(self):
+        q_word = self.request.GET.get('keyword')
+
+        if q_word:
+            object_list = Article.objects.filter(
+                Q(question__icontains=q_word) | Q(answer__icontains=q_word) | Q(tags__icontains=q_word)
+            )
+        else:
+            object_list = Article.objects.all()
+        return object_list
 
 
 

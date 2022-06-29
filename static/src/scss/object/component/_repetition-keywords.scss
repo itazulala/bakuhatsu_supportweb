@@ -16,6 +16,12 @@
 		margin-top: 18px;
 
 		width: auto;
+		::before {
+			content: attr(data-tag-style);
+			font-weight: 700;
+			font-size: 70px;
+			color: blue;
+		}
 	}
 
 	&__link {
