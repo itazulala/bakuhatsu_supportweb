@@ -1,0 +1,46 @@
+
+.p-contents-comments{
+	margin-top: 44px;
+	background-color: #fff;
+	border-radius: 20px;
+	padding-bottom: 32px;
+	&__wrapper{
+		padding-top: 32px;
+	}
+	&__title-inner{
+		text-align: center;
+	}
+	&__title{
+		font-size: 26px;
+		font-weight: 600;
+		&::before{
+			content: attr(data-english-title);
+			display: block;
+			font-weight: 400;
+				font-size: 16px;
+				color: #0C3898;
+				margin-bottom: 1rem;
+		}
+	}
+	&__container{
+		max-width: 993px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 21px;
+	}
+	&__columns{
+		border-top: 3px solid #D3EBE8;
+		&:first-child{
+			border-top:0px;
+		}
+	}
+}
+
+.p-contents-comments-form{
+	&__wrapper{
+			max-width: 993px;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 21px;
+	}
+}

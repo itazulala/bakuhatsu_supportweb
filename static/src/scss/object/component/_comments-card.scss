@@ -1,0 +1,55 @@
+.c-comments-card{
+	padding-top: 21px;
+		padding-bottom: 21px;
+	&__top{
+		display:flex;
+		align-items:center;
+	}
+	&__icon-inner{
+		width: 66px;
+		height:auto;
+		margin-right: 16px;
+	}
+	&__icon{
+		width: 100%;
+		height:100%;
+	}
+	&__icon-right{}
+	&__name{
+		font-weight: 300;
+			font-size: 16px;
+	}
+	&__date{
+		margin-top: 8px;
+		display: block;
+		font-weight: 300;
+			font-size: 16px;
+	}
+	&__middle{
+		margin-top: 21px;
+		padding-left: 82px;
+	}
+	&__contents{
+		font-weight: 300;
+			font-size: 16px;
+			letter-spacing: 0.0145455em;
+		line-height: 1.3;
+	}
+	&__bottom{
+		margin-top: 21px;
+		padding-left: 82px;
+	}
+	&__link{
+		font-weight: 600;
+			font-size: 14px;
+			color: #0C3898;
+			position: relative;
+
+			&::after{
+					content: url(/static/assets/images/link-arrow.svg);
+					position: absolute;
+						right: -20px;
+						top: 1px;
+			}
+	}
+}

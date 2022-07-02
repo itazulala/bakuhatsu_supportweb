@@ -4,7 +4,7 @@
 	margin-top: 29px;
 	background: #F7FAFF;
 	padding-top: 56px;
-
+padding-bottom: 86px;
 	&__wrapper {}
 
 }
@@ -141,11 +141,15 @@
 		margin-top: 48px;
 		display: flex;
 		justify-content: center;
+
 	}
 
 	&__button-inner {
 		margin-right: 58px;
 		text-align: center;
+		&:last-child{
+			margin-right: 0;
+		}
 	}
 
 	&__button {

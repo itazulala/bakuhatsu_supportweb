@@ -729,6 +729,60 @@ p:lang(en) {
   margin-left: 10px;
 }
 
+.c-comments-card {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+.c-comments-card__top {
+  display: flex;
+  align-items: center;
+}
+.c-comments-card__icon-inner {
+  width: 66px;
+  height: auto;
+  margin-right: 16px;
+}
+.c-comments-card__icon {
+  width: 100%;
+  height: 100%;
+}
+.c-comments-card__name {
+  font-weight: 300;
+  font-size: 16px;
+}
+.c-comments-card__date {
+  margin-top: 8px;
+  display: block;
+  font-weight: 300;
+  font-size: 16px;
+}
+.c-comments-card__middle {
+  margin-top: 21px;
+  padding-left: 82px;
+}
+.c-comments-card__contents {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.0145455em;
+  line-height: 1.3;
+}
+.c-comments-card__bottom {
+  margin-top: 21px;
+  padding-left: 82px;
+}
+.c-comments-card__link {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0C3898;
+  position: relative;
+}
+.c-comments-card__link::after {
+  content: url(/static/assets/images/link-arrow.svg);
+  position: absolute;
+  right: -20px;
+  top: 1px;
+}
+
 .c-category-tag {
   font-weight: 600;
   font-size: 14px;
@@ -1270,6 +1324,7 @@ p:lang(en) {
   margin-top: 29px;
   background: #F7FAFF;
   padding-top: 56px;
+  padding-bottom: 86px;
 }
 .c-contents-article__wrapper {
   background: #fff;
@@ -1381,6 +1436,9 @@ p:lang(en) {
   margin-right: 58px;
   text-align: center;
 }
+.c-contents-article__button-inner:last-child {
+  margin-right: 0;
+}
 .c-contents-article__button {
   display: block;
   border-radius: 50px;
@@ -1411,6 +1469,50 @@ p:lang(en) {
 }
 .c-contents-article__bookmark-icon {
   content: url(/static/assets/images/bookmark-pin.svg);
+}
+
+.p-contents-comments {
+  margin-top: 44px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding-bottom: 32px;
+}
+.p-contents-comments__wrapper {
+  padding-top: 32px;
+}
+.p-contents-comments__title-inner {
+  text-align: center;
+}
+.p-contents-comments__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+.p-contents-comments__title::before {
+  content: attr(data-english-title);
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  color: #0C3898;
+  margin-bottom: 1rem;
+}
+.p-contents-comments__container {
+  max-width: 993px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 21px;
+}
+.p-contents-comments__columns {
+  border-top: 3px solid #D3EBE8;
+}
+.p-contents-comments__columns:first-child {
+  border-top: 0px;
+}
+
+.p-contents-comments-form__wrapper {
+  max-width: 993px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 21px;
 }
 
 .p-information-detail {
