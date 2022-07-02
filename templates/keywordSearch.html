@@ -1,38 +1,38 @@
 {% load static %}
 <section class="p-keyword-search">
-  <div class="p-keyword-search__wrapper l-wrapper">
-    <h2 class="c-section-title" data-english-title="SEARCH">キーワード検索</h2>
-    <p class="c-section-title__subtext">キーワードで検索ができます。</p>
-    <div class="p-keyword-search__form-inner">
-      <form action="" method="get" class="c-search-form">
-        <input
-          name="keyword"
-          value="{{ request.GET.query }}"
-          type="text"
-          class="c-search-form__keyword"
-          placeholder="キーワードを入力指定ください。（スペース区切りで複数キーワード指定）"
-        />
-        <div class="c-search-form__submit-inner">
-          <input
-            class="c-search-form__submit"
-            type="image"
-            src="{% static '/assets/images/search.svg' %}"
-            alt="送信する"
-            width="55"
-            height="55"
-          />
+    <div class="p-keyword-search__wrapper l-wrapper">
+        <h2 class="c-section-title" data-english-title="SEARCH">キーワード検索</h2>
+        <p class="c-section-title__subtext">キーワードで検索ができます。</p>
+        <div class="p-keyword-search__form-inner">
+            <form action="" method="get" class="c-search-form">
+                <input
+                        name="keyword"
+                        value="{{ request.GET.query }}"
+                        type="text"
+                        class="c-search-form__keyword"
+                        placeholder="キーワードを入力指定ください。（スペース区切りで複数キーワード指定）"
+                />
+                <div class="c-search-form__submit-inner">
+                    <input
+                            class="c-search-form__submit"
+                            type="image"
+                            src="{% static '/assets/images/search.svg' %}"
+                            alt="送信する"
+                            width="55"
+                            height="55"
+                    />
+                </div>
+            </form>
         </div>
-      </form>
+        <div class="c-repetition_keywords">
+            <h3 class="c-repetition_keywords__title">よく検索されるキーワード</h3>
+            <ul class="repetition_keywords">
+            {% for tag in Tags %}
+            <li class="c-repetition_keywords__item">
+                <a class="c-repetition_keywords__link" data-hash="#">{{ tag.name }}</a>
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
-    <div class="c-repetition_keywords">
-      <h3 class="c-repetition_keywords__title">よく検索されるキーワード</h3>
-      <ul class="repetition_keywords">
-        {% for tag in Tags %}
-        <li class="c-repetition_keywords__item" data-tag-style="#">
-          <a class="c-repetition_keywords__link">{{ tag.name }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
 </section>

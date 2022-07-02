@@ -1,0 +1,56 @@
+@use'../../global/'as var;
+.c-information-card {
+	background: #FFFFFF;
+	border: 1px solid #D9E7FF;
+	border-radius: 19px;
+	padding: 25px;
+
+	&__top {}
+
+	&__title {
+		@include var.font-size(20);
+		font-weight: 600;
+		line-height: 1.5;
+		margin-top: 14px;
+
+		&:before {
+			content: attr(data-faq-title);
+			display: inline;
+		}
+	}
+
+	&__title-link {
+		color: var.$base-text-color;
+	}
+
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 24px;
+		align-items: baseline;
+	}
+	
+
+
+
+	&__date {
+		font-weight: 300;
+		font-size: 14px;
+		color: var.$base-text-color;
+		margin-right: 32px;
+	}
+
+	&__link {
+		font-weight: 600;
+		font-size: 14px;
+		color: #0C3898;
+
+		&::after {
+			content: url(/static/assets/images/link-arrow.svg);
+			display: inline-block;
+			vertical-align: text-top;
+			margin-left: 10px;
+		}
+	}
+}

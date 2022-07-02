@@ -1,0 +1,25 @@
+@use '../../global/' as var;
+
+.p-information {
+	background: var.$bg-secondary-color;
+	margin-top: 56px;
+	padding: 56px 0;
+	overflow: hidden;
+
+	&__wrapper {}
+	&__container{
+		margin-top: 35px;
+	}
+	&__column {
+			width: 100%;
+			margin-top: 16px;
+			&:first-child{
+				margin-top: 0;
+			}
+	}
+	&__button-inner{
+		text-align: center;
+		margin-top: 46px;
+	}
+
+}

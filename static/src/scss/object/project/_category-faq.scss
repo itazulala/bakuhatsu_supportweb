@@ -8,12 +8,42 @@
 	&__wrapper {}
 
 	&__container {}
+	&__tab-navigation{
+		margin-top: 12px;
+	}
+	&__tab-container{
+		display: flex;
+		align-items: center;
+	}
+	&__tab-item{
+			padding: 8px 16px;
+			list-style: none;
+			border: solid 1px var.$primary-color;
+
+			text-align: center;
+			cursor: pointer;
+			font-weight: bold;
+			border-radius: 5px 5px 0px 0px;
+			color: var.$primary-color;
+			margin-right: 12px;
+			&.is-active{
+				border-bottom: 1px solid #fff;
+				transition: all 0.2s ease-out;
+				background-color: #fff;
+			}
+	}
+	&__tab-panel{
+		display: none;
+		&.is-show{
+			display: block;
+		}
+	}
 
 	&__list {
-		margin-top: 12px;
 		padding-top: 36px;
 		padding-bottom: 72px;
 		border-top: 1px solid var.$primary-color;
+		margin-top: -1px;
 	}
 
 	&__column {

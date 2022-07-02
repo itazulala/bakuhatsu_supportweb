@@ -35,5 +35,11 @@
 		color: var.$primary-color;
 		line-height: 1.5;
 		background: var.$white;
+		&::before {
+			content: attr(data-hash);
+			display: inline-block;
+			margin-right: 5px;
+			@include var.font-size(16);
+		}
 	}
 }
