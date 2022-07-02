@@ -10,7 +10,7 @@ class ArticleDetail(DetailView):
 class ArticleList(ListView):
     model = Article
     paginate_by = 10
-    queryset = Article.objects.all().filter(draft=True)
+    queryset = Article.objects.all().filter(draft=False)
     template_name = 'contents/list.html'
 
     def get_context_data(self, **kwargs):

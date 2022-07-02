@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'contents.apps.ContentsConfig',
     'faq.apps.FaqConfig',
+    'contact.apps.ContactConfig',
+    'information.apps.InformationConfig',
     'markdownx',
 ]
 

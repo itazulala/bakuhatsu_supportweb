@@ -5,7 +5,7 @@ from contents.models import Article as contents
 
 
 class TopPage(ListView):
-    model = faq
+    model = contents
     queryset = contents.objects.all().filter(draft=True)
     template_name = 'index.html'
 

@@ -845,6 +845,8 @@ p:lang(en) {
   content: attr(data-hash);
   display: inline-block;
   margin-right: 5px;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 .c-category-card {

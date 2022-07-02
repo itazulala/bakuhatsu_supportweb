@@ -27,12 +27,10 @@
         <div class="c-repetition_keywords">
             <h3 class="c-repetition_keywords__title">よく検索されるキーワード</h3>
             <ul class="repetition_keywords">
-            {% for tag in Tags %}
-            <li class="c-repetition_keywords__item">
-                <a class="c-repetition_keywords__link" data-hash="#">{{ tag.name }}</a>
-            </li>
-            {% endfor %}
-            </ul>
+                {% for tag in Tags %}
+                <li class="c-repetition_keywords__item" data-hash="#">
+                    <a class="c-repetition_keywords__link">{{ tag.name}}</a>
+                </li>
+                {% endfor %}
         </div>
-    </div>
 </section>

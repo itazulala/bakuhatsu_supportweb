@@ -1,16 +1,11 @@
-from datetime import datetime
-
 from django.db.models import Q
 from django.utils import timezone
 from django.db import models
-from markdownx.models import MarkdownxField
 from accounts.models import AccountRole
-from django.core.validators import FileExtensionValidator
-from pathlib import Path
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField('タグ名', max_length=32)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
@@ -19,7 +14,7 @@ class Tag(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=32)
+    name = models.CharField('カテゴリー名', max_length=32)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
@@ -27,24 +22,14 @@ class Category(models.Model):
         return self.name
 
 
-class MarkdownFile(models.Model):
-    upload_path = models.FileField(upload_to='faq', validators=[FileExtensionValidator(['md',])])
-    uploaded = models.BooleanField(default=False)
-    created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return Path(str(self.upload_path)).name
-
-
 class Article(models.Model):
     question = models.CharField(max_length=100)
-    answer = MarkdownxField()
+    answer = models.TextField()
     file_path = models.CharField(max_length=100)
     draft = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag)
-    category_id = models.ForeignKey(Category, on_delete=models.PROTECT)
-    account_role_id = models.ForeignKey(AccountRole, default=1, on_delete=models.PROTECT, related_name='faq_role')
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    account_role = models.ForeignKey(AccountRole, default=1, on_delete=models.PROTECT, related_name='faq_role')
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
@@ -63,4 +48,12 @@ class Article(models.Model):
         return object_list
 
 
+class Request(models.Model):
+    name = models.CharField('氏名', max_length=100)
+    title = models.CharField('タイトル', max_length=100)
+    message = models.TextField('メッセージ', blank=False)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.question
