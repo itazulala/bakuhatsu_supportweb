@@ -2,6 +2,11 @@
 
 .l-main {
   // position: relative;
-  margin-top: 27px;
+  padding-top: 90px;
   overflow: hidden;
+
+  @include var.mq(lg) {
+    padding-top: 0;
+    margin-top: 27px;
+  }
 }
