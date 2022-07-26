@@ -5,14 +5,14 @@
 
   position: relative;
   font-weight: 600;
-  letter-spacing: 0.0145455em;
+  letter-spacing: 0.0145em;
 
   &::before {
     display: block;
     margin-bottom: 13px;
     font-weight: 400;
     color: var.$primary-color;
-    letter-spacing: 0.0145455em;
+    letter-spacing: 0.0145em;
     content: attr(data-english-title);
 
     @include var.font-size(16);

@@ -6,7 +6,7 @@
   "scripts": {
     "watch:scss": "sass src/scss:assets/css -s expanded --no-source-map -w",
     "watch:postcss": "postcss assets/css/main.css --no-map --dir assets/css/ -w",
-    "watch:stylelint": "onchange 'src/scss/**/*.scss'-- yarn run task:stylelint",
+    "watch:stylelint": "onchange 'src/scss/**/*.scss' -- yarn run task:stylelint",
     "task:stylelint": "stylelint --fix src/scss",
     "task:scss": "sass src/scss:assets/css -s compressed --no-source-map",
     "task:postcss": "postcss assets/css/main.css --no-map --dir assets/css/",

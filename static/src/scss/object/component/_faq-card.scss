@@ -57,7 +57,7 @@
   &__like-container {}
 
   &__like-number {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 28px;
     font-weight: 700;
     color: var.$primary-color;
@@ -103,7 +103,7 @@
       display: inline-block;
       margin-left: 10px;
       vertical-align: text-top;
-      content: url(/static/assets/images/link-arrow.svg);
+      content: url('/static/assets/images/link-arrow.svg');
     }
   }
 }

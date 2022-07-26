@@ -6,13 +6,13 @@
   @include var.font-size(32);
 
   font-weight: 600;
-  letter-spacing: 0.0145455em;
+  letter-spacing: 0.0145em;
 
   &::before {
     position: absolute;
     right: -20%;
     bottom: -160px;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 170px;
     font-weight: 700;
     color: rgb(12 56 152 / 5%);

@@ -52,10 +52,8 @@
     font-weight: 600;
     line-height: 1.3;
     color: var.$primary-color;
-    letter-spacing: 0.0145455em;
+    letter-spacing: 0.0145em;
   }
-
-  &__subtitle-answer {}
 
   &__answer-inner {}
 
@@ -112,10 +110,10 @@
   }
 
   &__good-icon {
-    content: url(/static/assets/images/good.svg);
+    content: url('/static/assets/images/good.svg');
   }
 
   &__bookmark-icon {
-    content: url(/static/assets/images/bookmark-pin.svg);
+    content: url('/static/assets/images/bookmark-pin.svg');
   }
 }

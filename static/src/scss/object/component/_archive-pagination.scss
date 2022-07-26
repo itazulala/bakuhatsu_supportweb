@@ -6,6 +6,20 @@
   display: flex;
   justify-content: center;
 
+  &__link {
+    display: block;
+    padding: 17px 20px;
+    font-size: 21px;
+    font-weight: 700;
+    color: var.$primary-color;
+
+    &[aria-current='page'] {
+      color: var.$white;
+      background-color: var.$primary-color;
+      border-radius: 6px;
+    }
+  }
+
   &__item {
     margin-right: 14px;
 
@@ -24,20 +38,6 @@
     }
   }
 
-  &__link {
-    display: block;
-    padding: 17px 20px;
-    font-size: 21px;
-    font-weight: 700;
-    color: var.$primary-color;
-
-    &[aria-current='page'] {
-      color: var.$white;
-      background-color: var.$primary-color;
-      border-radius: 6px;
-    }
-  }
-
   &__text {
     position: relative;
     font-size: 21px;
@@ -50,7 +50,7 @@
       position: absolute;
       top: 3px;
       left: -20px;
-      content: url(/static/assets/images/link-arrow.svg);
+      content: url('/static/assets/images/link-arrow.svg');
       transform: rotate(180deg);
     }
 
@@ -64,7 +64,7 @@
       position: absolute;
       top: 3px;
       right: -20px;
-      content: url(/static/assets/images/link-arrow.svg);
+      content: url('/static/assets/images/link-arrow.svg');
     }
 
     &:hover {
