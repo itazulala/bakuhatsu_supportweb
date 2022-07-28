@@ -1,0 +1,34 @@
+@use '../../global/' as var;
+
+.u-sm-newline {
+  // 992pxより小さい画面幅の時疑似要素で改行<span class="u-sm-newline"></span>
+  &::before {
+    white-space: pre;
+    content: '\A';
+  }
+
+  @include var.mq(sm) {}
+
+  @include var.mq(md) {}
+
+  @include var.mq(lg) {
+    // 改行解除
+    &::before {
+      white-space: unset;
+      content: '';
+    }
+  }
+}
+
+br {
+  // 992px移行はbrで改行
+  display: none;
+
+  @include var.mq(sm) {}
+
+  @include var.mq(md) {}
+
+  @include var.mq(lg) {
+    display: unset;
+  }
+}

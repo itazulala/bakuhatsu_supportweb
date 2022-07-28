@@ -15,7 +15,19 @@
   }
 
   &__column {
-    margin-top: 16px;
+    margin-top: 21px;
+
+    &:first-of-type {
+      margin-top: 31px;
+
+      @include var.mq(lg) {
+        margin-top: 16px;
+      }
+    }
+
+    @include var.mq(lg) {
+      margin-top: 16px;
+    }
   }
 
   &__button-inner {

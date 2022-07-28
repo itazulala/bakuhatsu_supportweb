@@ -21,12 +21,16 @@
   &::after {
     position: absolute;
     top: 71%;
-    left: -73%;
+    left: unset;
     display: inline-block;
     width: 715px;
     height: 1px;
     content: '';
     background-color: var.$primary-color;
+
+    @include var.mq( lg) {
+      left: -73%;
+    }
   }
 
   &__subtext {
@@ -38,8 +42,12 @@
   text-align: center;
 
   &__title {
-    font-size: 26px;
+    font-size: 21px;
     font-weight: 600;
+
+    @include var.mq( lg) {
+      font-size: 26px;
+    }
 
     &::before {
       display: block;

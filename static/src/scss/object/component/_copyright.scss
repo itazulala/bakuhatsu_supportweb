@@ -6,6 +6,10 @@
   }
 
   &__text {
-    @include var.font-size(14);
+    @include var.font-size(12);
+
+    @include var.mq(lg) {
+      @include var.font-size(14);
+    }
   }
 }

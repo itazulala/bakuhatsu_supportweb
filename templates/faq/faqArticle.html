@@ -79,27 +79,27 @@
         <h3 class="p-faq-request__title">\質問リクエストを投稿しよう/</h3>
       </div>
       <div class="p-faq-request__form-inner">
-        <form action="{% url 'request_create' %}" method="POST" class="c-faq-request-form">
+        <form action="{% url 'request_create' %}" method="POST" class="c-request-form">
           {% csrf_token %}
-          <div class="c-faq-request-form__items">
-            <label for="" class="c-faq-request-form__text">
+          <div class="c-request-form__items">
+            <label for="" class="c-request-form__text">
               氏名
             </label>
-            {{ form.name | add_class:"c-faq-request-form__input"}}
+            {{ form.name | add_class:"c-request-form__input"}}
           </div>
-          <div class="c-faq-request-form__items">
-            <label for="" class="c-faq-request-form__text">
+          <div class="c-request-form__items">
+            <label for="" class="c-request-form__text">
               件名
             </label>
-            {{ form.title | add_class:"c-faq-request-form__input"}}
+            {{ form.title | add_class:"c-request-form__input"}}
           </div>
-          <div class="c-faq-request-form__items">
-            <label for="" class="c-faq-request-form__text">
+          <div class="c-request-form__items">
+            <label for="" class="c-request-form__text">
               リクエスト内容
             </label>
-            {{ form.message | add_class:"c-faq-request-form__input"}}
+            {{ form.message | add_class:"c-request-form__input"}}
           </div>
-          <div class="c-faq-request-form__items">
+          <div class="c-request-form__items">
             <button type="submit" class="c-primary-button--fill">
               リクエストを送信する
             </button>

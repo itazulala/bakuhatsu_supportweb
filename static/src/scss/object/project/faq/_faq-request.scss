@@ -1,19 +1,33 @@
 @use '../../../global/' as var;
 
 .p-faq-request {
-  padding-top: 130px;
+  padding-top: 16px;
+  padding-bottom: 50px;
   background: var.$bg-light-color;
 
+  @include var.mq(lg) {
+    padding-top: 130px;
+    padding-bottom: 0;
+  }
+
   &__wrapper {
-    padding: 69px;
+    padding: 0 1rem;
+
+    @include var.mq(lg) {
+      padding: 69px;
+    }
   }
 
   &__container {
-    padding: 48px 103px;
+    padding: 48px 20px 28px;
     margin-top: 27px;
     background: var.$white;
     border-radius: 19px;
     box-shadow: 0 0 10px #d9e7ff;
+
+    @include var.mq(lg) {
+      padding: 48px 103px;
+    }
   }
 
   &__title-inner {
@@ -21,9 +35,14 @@
   }
 
   &__title {
-    font-size: 28px;
+    @include var.font-size(20);
+
     font-weight: 700;
     color: var.$primary-color;
+
+    @include var.mq(lg) {
+      @include var.font-size(28);
+    }
   }
 
   &__form-inner {

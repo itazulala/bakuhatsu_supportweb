@@ -3,20 +3,30 @@
 .c-primary-button {
   display: inline-block;
   padding: 12px 60px;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: 500;
   color: var.$primary-color;
   background: var.$white;
   border: 1px solid var.$primary-color;
   border-radius: 6px;
 
-  &--fill {
-    padding: 20px 45px;
+  @include var.mq(lg) {
     font-size: 21px;
+  }
+
+  &--fill {
+    display: inline-block;
+    padding: 16px 22px 12px;
+    font-size: 18px;
     font-weight: 600;
     color: var.$white;
     background: var.$primary-color;
     border-radius: 6px;
+
+    @include var.mq(lg) {
+      padding: 20px 45px;
+      font-size: 21px;
+    }
 
     &::before {
       display: inline-block;

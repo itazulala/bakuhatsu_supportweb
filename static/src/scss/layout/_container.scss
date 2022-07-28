@@ -2,6 +2,11 @@
 
 .l-container {
   max-width: 992px;
+  padding: 0 1rem;
   margin-right: auto;
   margin-left: auto;
+
+  @include var.mq(lg) {
+    padding: 0;
+  }
 }

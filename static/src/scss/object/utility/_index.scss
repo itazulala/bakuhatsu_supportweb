@@ -1,5 +1,6 @@
 // object/utility/_index.scss
 
+@forward 'newline';
 @forward 'screen-reader-text';
 
 .mt-1 {
@@ -12,4 +13,9 @@
 
 .ml-auto {
   margin-left: auto;
+}
+
+.u-text-left {
+  display: block;
+  text-align: left;
 }

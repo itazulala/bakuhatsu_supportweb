@@ -1,25 +1,37 @@
 @use '../../global/' as var;
 
-.c-faq-request-form {
+.c-request-form {
   &__items {
-    margin-top: 26px;
+    margin-top: 20px;
+
+    @include var.mq(lg) {
+      margin-top: 26px;
+    }
 
     &:first-child {
       margin-top: 0;
     }
 
     &:last-child {
-      margin-top: 42px;
+      margin-top: 26px;
       text-align: center;
+
+      @include var.mq(lg) {
+        margin-top: 42px;
+      }
     }
   }
 
   &__text {
     display: block;
     margin-bottom: 11px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     color: #323232;
+
+    @include var.mq(lg) {
+      font-size: 18px;
+    }
   }
 
   &__category-inner {
@@ -52,14 +64,22 @@
 
   &__input {
     width: 100%;
-    padding: 21px 18px;
+    padding: 16px 12px;
     background: var.$white;
     border: 1px solid #d9e7ff;
     border-radius: 6px;
 
+    @include var.mq(lg) {
+      padding: 21px 18px;
+    }
+
     &::placeholder {
-      font-size: 20px;
+      font-size: 16px;
       color: #c9c9c9;
+
+      @include var.mq(lg) {
+        font-size: 20px;
+      }
     }
   }
 
@@ -71,8 +91,12 @@
     border-radius: 6px;
 
     &::placeholder {
-      font-size: 20px;
+      font-size: 16px;
       color: #c9c9c9;
+
+      @include var.mq(lg) {
+        font-size: 20px;
+      }
     }
   }
 }

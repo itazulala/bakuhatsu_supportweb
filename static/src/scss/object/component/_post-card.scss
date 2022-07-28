@@ -1,19 +1,26 @@
 @use '../../global/' as var;
 
 .c-post-card {
-  padding: 25px;
+  padding: 18px;
   background: var.$white;
   border: 1px solid #d9e7ff;
   border-radius: 19px;
 
+  @include var.mq( lg) {
+    padding: 25px;
+  }
   &__top {}
 
   &__title {
-    @include var.font-size(20);
+    @include var.font-size(18);
 
     margin-top: 14px;
     font-weight: 600;
     line-height: 1.5;
+
+    @include var.mq(lg) {
+      @include var.font-size(20);
+    }
 
     &::before {
       display: inline;
@@ -27,9 +34,15 @@
 
   &__bottom {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-top: 24px;
+    align-items: last baseline;
+    justify-content: right;
+    margin-top: 14px;
+
+    @include var.mq(lg) {
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
   }
 
   &__rank {
@@ -44,25 +57,36 @@
     font-size: 14px;
     font-weight: 300;
     color: var.$base-text-color;
+    vertical-align: middle;
   }
 
   &__tag-container {}
 
   &__category-tag {
+    display: inline-block;
     padding: 4px 8px;
     margin-right: 8px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     color: var.$primary-color;
     background: var.$bg-light-color;
     border: 1px solid var.$bg-light-color;
     border-radius: 5px;
+
+    @include var.mq(lg) {
+      font-size: 14px;
+    }
   }
 
   &__link {
     font-size: 14px;
     font-weight: 600;
     color: var.$primary-color;
+    white-space: nowrap;
+
+    @include var.mq(lg) {
+      white-space: unset;
+    }
 
     &::after {
       display: inline-block;

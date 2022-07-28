@@ -1,12 +1,17 @@
 @use '../../global/' as var;
 
 .c-category-tag {
+  display: inline-block;
   padding: 4px 8px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: var.$white;
   letter-spacing: 0.0145em;
   border-radius: 5px;
+
+  @include var.mq(lg) {
+    font-size: 14px;
+  }
 
   &__primary {
     background: var.$primary-color;

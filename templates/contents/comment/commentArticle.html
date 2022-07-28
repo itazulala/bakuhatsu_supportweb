@@ -86,28 +86,28 @@
               </h2>
             </div>
             <div class="p-post-comments__inner">
-              <form action="{% url 'comment_create' %}" method="POST" class="c-faq-request-form">
+              <form action="{% url 'comment_create' %}" method="POST" class="c-request-form">
                 {% csrf_token %}
                 <input type="hidden" name="thread" value={{object.id}}>
-                <div class="c-faq-request-form__items">
-                  <label for="" class="c-faq-request-form__text">
+                <div class="c-request-form__items">
+                  <label for="" class="c-request-form__text">
                     お名前(ニックネーム)
                   </label>
-                  {{ form.name | add_class:"c-faq-request-form__input"}}
+                  {{ form.name | add_class:"c-request-form__input"}}
                 </div>
-                <div class="c-faq-request-form__items">
-                  <label for="" class="c-faq-request-form__text">
+                <div class="c-request-form__items">
+                  <label for="" class="c-request-form__text">
                     メールアドレス
                   </label>
-                  {{ form.email | add_class:"c-faq-request-form__input"}}
+                  {{ form.email | add_class:"c-request-form__input"}}
                 </div>
-                <div class="c-faq-request-form__items">
-                  <label for="" class="c-faq-request-form__text">
+                <div class="c-request-form__items">
+                  <label for="" class="c-request-form__text">
                     リクエスト内容
                   </label>
-                  {{ form.message | add_class:"c-faq-request-form__input"}}
+                  {{ form.message | add_class:"c-request-form__input"}}
                 </div>
-                <div class="c-faq-request-form__items">
+                <div class="c-request-form__items">
                   <button type="submit" class="c-primary-button--fill">
                     質問/コメントを投稿する
                   </button>
