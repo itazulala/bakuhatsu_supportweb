@@ -27,7 +27,7 @@ class TopPage(ListView):
 
 class PrivacyPolicy(View):
     def get(self, request, *args, **kwargs):
-        with open('templates/privacy_policy_supportweb.md') as file:
+        with open('templates/privacy-policy/privacy_policy_supportweb.md') as file:
             s = file.read()
         s_to_html = markdown(s)
-        return render(request, 'privacy-policy.html', context={'contents': s_to_html})
+        return render(request, 'privacy-policy/privacy-policy.html', context={'contents': s_to_html})
