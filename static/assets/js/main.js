@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //クリックされたtabのデータ属性を取得
     const tabTargetData = e.currentTarget.dataset.tab;
     //クリックされたtabの親要素及びその子要素を取得
-		const tabList = e.currentTarget.closest('.c-tab-navigation__container');
+    const tabList = e.currentTarget.closest('.c-tab-navigation__container');
 
     const tabItems = tabList.querySelectorAll('.c-tab-navigation__item');
     //クリックされたtabと同階層にあるcontentを取得
@@ -52,3 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', tabClick);
   });
 });
+
+document.getElementById('js-elem'); // トリガーになる要素を取得
