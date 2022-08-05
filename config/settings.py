@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +20,19 @@ MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/img/'
 MEDIA_ROOT = BASE_DIR / 'img'
 
+env = environ.Env(DEBUG=(bool, False))
+env.read_env(BASE_DIR / '.env')
+env.get_value('DATABASE_URL', str)
+SECRET_KEY = env('SECRET_KEY')
+
+DEBUG = env('DEBUG')
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!6qi6d69@e^($foj%4p%57v!$i!!%%9vbi8qe6$u&y$i%(&woi'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,13 +92,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bakuhatsu_support_web',
-        'USER': 'root',  # ログインユーザー名作
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': env.db(),
 }
 
 # Password validation
@@ -156,7 +159,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': './app.log'.format(PROJECT_NAME),
+            'filename': './log/app.log'.format(PROJECT_NAME),
             'formatter': 'production',
         },
     },
