@@ -1,8 +1,9 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, CreateView, FormView
-from .models import Article, Thread, Comment
+from .models import Article, Thread, Comment, Tag
 from .forms import ThreadForm, CommentForm
 from django.urls import reverse_lazy, reverse
+from django.contrib import messages
 
 
 class ArticleDetail(DetailView, CreateView):
@@ -37,7 +38,7 @@ class ArticleList(ListView):
 
 
 class ThreadCreate(CreateView):
-    model = Thread
+    model = Thread, Article
     form_class = ThreadForm
     template_name = 'contents/detail.html'
 
@@ -53,6 +54,21 @@ class ThreadCreate(CreateView):
 
     def get_success_url(self):
         return reverse('contents_detail', kwargs={'pk': self.object.article.id})
+
+    def form_invalid(self, form):
+        content = Article.objects.filter(
+            id=form.data['article']).values('title', 'content', 'created_at', 'tags')[0]
+        context = self.get_context_data()
+        context.update({
+            'error_message': form.errors['email'],
+            'content': {
+                'title': content['title'],
+                'content': content['content'],
+                'created_at': content['created_at']
+            }
+        })
+        print(context)
+        return self.render_to_response(context)
 
 
 class CommentCreate(CreateView):

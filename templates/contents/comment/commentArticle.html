@@ -56,11 +56,19 @@
             <div class="c-comments-card">
               <div class="c-comments-card__top">
                 <picture class="c-comments-card__icon-inner">
+                  {% if comment.admin_flag %}
                   <img
                     class="c-comments-card__icon"
                     src="{% static '/assets/images/official-icon.svg' %}"
                     alt=""
                   />
+                  {% else %}
+                  <img
+                    class="c-comments-card__icon"
+                    src="{% static '/assets/images/user-icon.svg' %}"
+                    alt=""
+                  />
+                  {% endif %}
                 </picture>
                 <div class="c-comments-card__icon-right">
                   <p class="c-comments-card__name">{{ comment.name}}</p>
@@ -89,6 +97,7 @@
               <form action="{% url 'comment_create' %}" method="POST" class="c-request-form">
                 {% csrf_token %}
                 <input type="hidden" name="thread" value={{object.id}}>
+                <input type="hidden" name="admin_flag" value=false>
                 <div class="c-request-form__items">
                   <label for="" class="c-request-form__text">
                     お名前(ニックネーム)

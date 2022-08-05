@@ -48,6 +48,7 @@
           <h2 class="c-section-heading__title" data-english-title="COMMENTS">
             質問/コメントを投稿する
           </h2>
+          {{ error_message }}
         </div>
         <div class="p-post-comments__inner">
           <form action="{% url 'thread_create' %}" method="POST"  class="c-request-form">

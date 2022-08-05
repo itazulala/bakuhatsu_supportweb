@@ -9,7 +9,7 @@
 			 {% endcomment %}
         <time datetime="" class="c-contents-detail__date">{{ content.created_at|date:'Y/n/j' }}</time>
         <div class="c-contents-detail__category-inner">
-            {% for tags in object.tags.all %}
+            {% for tags in content.tags.all %}
           <span class="c-contents-detail__category-tag">#{{ tags.name }}</span>
             {% endfor %}
         </div>
