@@ -22,7 +22,6 @@ MEDIA_ROOT = BASE_DIR / 'img'
 
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(BASE_DIR / '.env')
-env.get_value('DATABASE_URL', str)
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
