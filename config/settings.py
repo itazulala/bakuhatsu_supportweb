@@ -23,7 +23,7 @@ MEDIA_ROOT = BASE_DIR / 'img'
 env = environ.Env(DEBUG=(bool, False))
 env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env('SECRET_KEY')
-
+BASE_URL = env('BASE_URL')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
@@ -180,7 +180,7 @@ LOGGING = {
 }
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'yuta.watanabe.pbiz@gmail.com'
-EMAIL_HOST_PASSWORD = 'hgizyvssszxwlhxs'
+EMAIL_HOST_USER = 'minaton.tutan@gmail.com'
+EMAIL_HOST_PASSWORD = 'ehoghhpfzxllomfi'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
