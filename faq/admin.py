@@ -10,19 +10,14 @@ class TagAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
 
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ('id', 'question', 'draft', 'account_role')
-
-
-class RequestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'article', 'name', 'email')
-
-
 class RequestAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'title')
+
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('id', 'question')
 
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
-admin.site.register(Article, ArticleAdmin)
 admin.site.register(Request, RequestAdmin)
+admin.site.register(Article, ArticleAdmin)
