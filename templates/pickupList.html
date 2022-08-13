@@ -17,6 +17,7 @@
     <div class="c-tab-navigation__contents">
         <div class="c-tab-navigation__tab-panel is-show" data-content="01">
             {% for contents in contents_list %}
+            {% if not contents.draft or user.is_authenticated %}
             <div class="p-contents-list__column ">
                 <article class="c-post-card">
                     <div class="c-post-card__top">
@@ -44,6 +45,7 @@
                     </div>
                 </article>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="p-contents-list__button-inner">
                 <a href="{% url 'contents_list' %}" class="c-primary-button">もっと見る</a>
@@ -51,6 +53,7 @@
         </div>
         <div class="c-tab-navigation__tab-panel" data-content="02">
             {% for faq in faq_list %}
+            {% if not faq.draft or user.is_authenticated %}
             <div class="p-contents-list__column ">
                 <article class="c-post-card">
                     <div class="c-post-card__top">
@@ -77,6 +80,7 @@
                     </div>
                 </article>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="p-contents-list__button-inner">
                 <a href="{% url 'faq_list' %}" class="c-primary-button">もっと見る</a>
