@@ -1,7 +1,7 @@
 ---
 title: "素反応と不安定化学種"
 date: 2022-05-20T07:53:24+09:00
-draft: false
+draft: true
 katex: true
 tags: [化学]
 categories: [Tutorials]
