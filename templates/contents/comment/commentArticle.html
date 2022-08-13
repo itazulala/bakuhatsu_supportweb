@@ -95,14 +95,18 @@
             </div>
             <div class="p-post-comments__inner">
               <form action="{% url 'comment_create' %}" method="POST" class="c-request-form">
+                <input type="hidden" name="thread" value={{thread.id}}>
                 {% csrf_token %}
-                <input type="hidden" name="thread" value={{object.id}}>
-                <input type="hidden" name="admin_flag" value=false>
+                {% if user.is_authenticated %}
+                <input type="hidden" name="admin_flag" value=True>
+                {% else %}
+                <input type="hidden" name="admin_flag" value=False>
+                {% endif %}
                 <div class="c-request-form__items">
                   <label for="" class="c-request-form__text">
                     お名前(ニックネーム)
                   </label>
-                  {{ form.name | add_class:"c-request-form__input"}}
+                  {{ form.name | add_class:"c-request-form__input" }}
                 </div>
                 <div class="c-request-form__items">
                   <label for="" class="c-request-form__text">
