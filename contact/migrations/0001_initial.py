@@ -13,10 +13,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='AccountRole',
+            name='Comment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=32)),
+                ('name', models.CharField(max_length=100, verbose_name='氏名')),
+                ('email', models.EmailField(max_length=255, verbose_name='メールアドレス')),
+                ('title', models.CharField(max_length=100, verbose_name='件名')),
+                ('message', models.TextField(verbose_name='メッセージ')),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('updated_at', models.DateTimeField(default=django.utils.timezone.now)),
             ],
