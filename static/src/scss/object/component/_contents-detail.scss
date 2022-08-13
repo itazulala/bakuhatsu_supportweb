@@ -350,4 +350,16 @@
       border-top: 0;
     }
   }
+
+  &__message {
+    text-align: center;
+  }
+
+  &__link {
+    padding-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var.$primary-color;
+    white-space: nowrap;
+  }
 }
