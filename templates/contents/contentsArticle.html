@@ -2,6 +2,7 @@
 {% load markdown_extras %}
 <article class="c-contents-detail">
   <div class="c-contents-detail__wrapper">
+  {% if not content.draft or user.is_authenticated %}
     <div class="c-contents-detail__top">
       <div class="c-contents-detail__data-container">
 				{% comment %}
@@ -25,5 +26,13 @@
           {{content.content |markdown | safe}}
       </div>
     </div>
+  {% else %}
+      <div class="c-contents-detail__bottom">
+      <div class="c-contents-detail__message">
+          <p>閲覧権限がありません。</p>
+          <a href="" class="c-contents-detail__link">前の画面に戻る</a>
+      </div>
+    </div>
+  {% endif %}
   </div>
 </article>

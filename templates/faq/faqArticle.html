@@ -5,14 +5,15 @@
   <div class="p-contents-detail__wrapper l-wrapper">
     <article class="c-contents-detail">
       <div class="c-contents-detail__wrapper">
+        {% if not faq.draft or user.is_authenticated %}
         <div class="c-contents-detail__top">
           <div class="c-contents-detail__data-container">
 						{% comment %}
            <span class="c-contents-detail__rank">会員種別：テキスト？</span>
 					 {% endcomment %}
-            <time datetime="{{ object.created_at|date:'Y-n-j' }}" class="c-contents-detail__date">{{ object.created_at|date:'Y/n/j' }}</time>
+            <time datetime="{{ object.created_at|date:'Y-n-j' }}" class="c-contents-detail__date">{{ faq.created_at|date:'Y/n/j' }}</time>
             <div class="c-contents-detail__category-inner">
-              {% for tag in object.tags.all %}
+              {% for tag in faq.tags.all %}
                 <span class="c-contents-detail__category-tag">{{ tag.name }}</span>
               {% endfor %}
             </div>
@@ -25,7 +26,7 @@
             </p>
             <div class="c-faq-detail__title-inner">
               <h2 class="c-faq-detail__title">
-                {{ object.question }}
+                {{ faq.question }}
               </h2>
             </div>
           </div>
@@ -36,10 +37,18 @@
               <span class="c-faq-detail__subtitle c-faq-detail__subtitle-answer">回答</span>
             </p>
             <div class="c-faq-detail__answer">
-                {{ object.answer | markdown | safe }}
+                {{ faq.answer | markdown | safe }}
             </div>
           </div>
         </div>
+        {% else %}
+        <div class="c-contents-detail__bottom">
+          <div class="c-contents-detail__message">
+            <p>閲覧権限がありません。</p>
+            <a href="" class="c-contents-detail__link">前の画面に戻る</a>
+          </div>
+        </div>
+        {% endif %}
       </div>
 	{% comment %} 
 	 <div class="c-faq-detail__like-container">
