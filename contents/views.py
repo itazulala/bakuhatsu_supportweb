@@ -25,7 +25,6 @@ class ArticleDetail(DetailView, CreateView):
 class ArticleList(ListView):
     model = Article
     paginate_by = 10
-    queryset = Article.objects.all().filter(draft=False)
     template_name = 'contents/list.html'
     context_object_name = 'contents_list'
 

@@ -13,33 +13,36 @@
 
 {% block card_list %}
 {% for faq in faq_list %}
+{% if not contents.draft or user.is_authenticated %}
 <div class="p-contents-list__column ">
-    <article class="c-post-card">
-        <div class="c-post-card__top">
-            <span class="c-category-tag  c-category-tag__answer-primary">{{ faq.category.name }}</span>
-						{% comment%}
-						<span class="c-post-card__rank">会員種別：テキスト？</span>
-						{% endcomment%}
-            <time datetime="{{ faq.created_at|date:'Y-n-j' }}" class="c-post-card__date">{{ faq.created_at|date:'Y/n/j' }}</time>
-        </div>
-        <div class="c-post-card__middle">
-            <h3 class="c-post-card__title">
-                <a href="{% url 'faq_detail' pk=faq.id %}" class="c-post-card__title-link">
-                    {{ faq.question }}
-                </a>
-            </h3>
-        </div>
-        <div class="c-post-card__bottom">
-            <div class="c-post-card__tag-container">
-                {% for tags in object.tags.all %}
-                <span class="c-post-card__category-tag">#{{ tags.name }}</span>
-                {% endfor %}
-            </div>
-            <div class="c-post-card__infomation-inner">
-                <a href="{% url 'faq_detail' pk=faq.id %}" class="c-post-card__link">回答を読む</a>
-            </div>
-        </div>
-    </article>
+  <article class="c-post-card">
+    <div class="c-post-card__top">
+      <span class="c-category-tag  c-category-tag__answer-primary">{{ faq.category.name }}</span>
+      {% comment%}
+      <span class="c-post-card__rank">会員種別：テキスト？</span>
+      {% endcomment%}
+      <time datetime="{{ faq.created_at|date:'Y-n-j' }}" class="c-post-card__date">{{ faq.created_at|date:'Y/n/j' }}
+      </time>
+    </div>
+    <div class="c-post-card__middle">
+      <h3 class="c-post-card__title">
+        <a href="{% url 'faq_detail' pk=faq.id %}" class="c-post-card__title-link">
+          {{ faq.question }}
+        </a>
+      </h3>
+    </div>
+    <div class="c-post-card__bottom">
+      <div class="c-post-card__tag-container">
+        {% for tags in object.tags.all %}
+        <span class="c-post-card__category-tag">#{{ tags.name }}</span>
+        {% endfor %}
+      </div>
+      <div class="c-post-card__infomation-inner">
+        <a href="{% url 'faq_detail' pk=faq.id %}" class="c-post-card__link">回答を読む</a>
+      </div>
+    </div>
+  </article>
+  {% endif %}
 </div>
 {% endfor %}
 {% include 'archive-navigation.html' %}

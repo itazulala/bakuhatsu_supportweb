@@ -13,6 +13,7 @@
 
 {% block card_list %}
 {% for contents in contents_list %}
+{% if not contents.draft or user.is_authenticated %}
 <div class="p-contents-list__column ">
     <article class="c-post-card">
         <div class="c-post-card__top">
@@ -21,7 +22,7 @@
 								{% comment%}
 								<span class="c-post-card__rank">会員種別：テキスト？</span>
 								{% endcomment%}
-                <time datetime="{{ contents.created_at|date:"Y-n-j"}}" class="c-post-card__date">{{ contents.created_at|date:"Y/n/j"}}
+                <time datetime="{{ contents.created_at|date:'Y-n-j'}}" class="c-post-card__date">{{ contents.created_at|date:'Y/n/j'}}
                 </time>
             </div>
             <h3 class="c-post-card__title">
@@ -42,6 +43,7 @@
         </div>
     </article>
 </div>
+{% endif %}
 {% endfor %}
 {% include 'archive-navigation.html' %}
 {% endblock %}

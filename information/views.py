@@ -6,7 +6,6 @@ from faq.models import Article as Faq
 class ArticleList(ListView):
     model = Article
     paginate_by = 10
-    queryset = Article.objects.all().filter(draft=False)
     context_object_name = 'information_list'
     template_name = 'information/list.html'
 
@@ -22,3 +21,4 @@ class ArticleList(ListView):
 class ArticleDetail(DetailView):
     model = Article
     template_name = 'information/detail.html'
+    context_object_name = 'information'

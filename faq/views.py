@@ -7,7 +7,6 @@ from django.urls import reverse_lazy
 class ArticleList(ListView):
     model = Article
     paginate_by = 10
-    queryset = Article.objects.all().filter(draft=False)
     template_name = 'faq/list.html'
     context_object_name = 'faq_list'
 
@@ -23,6 +22,7 @@ class ArticleList(ListView):
 class ArticleDetail(DetailView):
     model = Article
     template_name = 'faq/detail.html'
+    context_object_name = 'faq'
 
     def get_context_data(self, **kwargs):
         context = super(ArticleDetail, self).get_context_data(**kwargs)

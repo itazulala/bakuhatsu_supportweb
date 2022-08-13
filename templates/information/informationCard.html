@@ -5,6 +5,7 @@
             <h2 class="c-section-title" data-english-title="INFORMATION">お知らせ</h2>
             <p class="c-section-title__subtext">本サイトの更新状況をお知らせします。</p>
             {% for information in information_list %}
+            {% if not information.draft or user.is_authenticated %}
             <div class="p-contents-list__column">
                 <article class="c-post-card">
                     <div class="c-post-card__top">
@@ -23,6 +24,7 @@
                     </div>
                 </article>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="p-contents-list__button-inner">
                 <a href="{% url 'information_list' %}" class="c-primary-button">もっと見る</a>
