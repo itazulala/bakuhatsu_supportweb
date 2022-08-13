@@ -20,7 +20,7 @@ MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/img/'
 MEDIA_ROOT = BASE_DIR / 'img'
 
-env = environ.Env(DEBUG=(bool, False))
+env = environ.Env()
 env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env('SECRET_KEY')
 BASE_URL = env('BASE_URL')
