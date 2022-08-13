@@ -11,10 +11,11 @@ def comment_create_notification(sender, instance, created, **kwargs):
 
     if created:
         subject = "お問い合わせ通知"
-        message = f"{instance.name}\n" \
-                  f"{instance.title}\n" \
-                  f"{instance.email}\n" \
-                  f"{instance.message}\n"
+        message = f"お問い合わせがありました。\n\n"\
+                  f"氏名：{instance.name}\n\n" \
+                  f"タイトル：{instance.title}\n\n" \
+                  f"メッセージ：\n{instance.message}\n\n" \
+                  f"メールアドレス：{instance.email}\n"
         from_email = settings.DEFAULT_FROM_EMAIL
         recipient_list = [settings.EMAIL_HOST_USER]
         send_mail(subject, message, from_email, recipient_list)
