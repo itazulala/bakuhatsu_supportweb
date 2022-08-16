@@ -11,7 +11,7 @@ import smtplib, ssl
 @receiver(post_save, sender=Thread)
 def thread_create_notification(sender, instance, created, **kwargs):
     if created:
-        subject = "コメント投稿通知（テスト）"
+        subject = "コメント投稿通知"
         message = f"<h3>コメントが投稿されました。</h3><br>" \
                   f"<p>[氏名]<br>{instance.name}</p>" \
                   f"<p>[メールアドレス]<br>{instance.email}</p>" \

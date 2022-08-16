@@ -10,7 +10,7 @@ import smtplib, ssl
 @receiver(post_save, sender=Comment)
 def comment_create_notification(sender, instance, created, **kwargs):
     if created:
-        subject = "お問い合わせ通知（テスト）"
+        subject = "お問い合わせ通知"
         message = f"<h3>お問い合わせがありました。</h3><br>" \
                   f"<p>[氏名]<br>{instance.name}</p>" \
                   f"<p>[タイトル]<br>{instance.title}</p>" \
