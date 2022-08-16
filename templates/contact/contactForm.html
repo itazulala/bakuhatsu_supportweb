@@ -28,19 +28,19 @@
                     {% csrf_token %}
                     <div class="c-request-form__items">
                         <label for="" class="c-request-form__text">氏名</label>
-                        {{ form.name|add_class:'c-request-form__input' }}
+                        {{ form.name | add_class:'c-request-form__input' }}
                     </div>
                     <div class="c-request-form__items">
                         <label for="" class="c-request-form__text">メールアドレス</label>
-                        {{ form.email|add_class:'c-request-form__input' }}
+                        {{ form.email | add_class:'c-request-form__input' }}
                     </div>
                     <div class="c-request-form__items">
                         <label for="" class="c-request-form__text">件名</label>
-                        {{ form.title|add_class:'c-request-form__input' }}
+                        {{ form.title | add_class:'c-request-form__input' }}
                     </div>
                     <div class="c-request-form__items">
                         <label for="" class="c-request-form__text">お問い合わせ内容</label>
-                        {{ form.message|add_class:'c-request-form__input-textarea' }}
+                        {{ form.message | add_class:'c-request-form__input-textarea' }}
                     </div>
                     <div class="c-request-form__items">
                         <button type="submit" class="c-primary-button--fill">

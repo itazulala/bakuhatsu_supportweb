@@ -29,7 +29,7 @@
             </div>
             <div class="c-comments-card__middle">
               <p class="c-comments-card__contents">
-                {{ thread.message }}
+                {{ thread.message | linebreaksbr }}
               </p>
             </div>
             <div class="c-comments-card__bottom"></div>
@@ -77,12 +77,12 @@
                   </time>
                 </div>
               </div>
+              <div class="c-comments-card__bottom"></div>
               <div class="c-comments-card__middle">
+                {{ comment.message | linebreaksbr}}
                 <p class="c-comments-card__contents">
-                  {{ comment.message}}
                 </p>
               </div>
-              <div class="c-comments-card__bottom"></div>
             </div>
           </div>
             {% endfor %}
