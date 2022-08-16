@@ -22,9 +22,7 @@ MEDIA_ROOT = BASE_DIR / 'img'
 
 env = environ.Env()
 env.read_env(BASE_DIR / '.env')
-SECRET_KEY = env('SECRET_KEY')
 BASE_URL = env('BASE_URL')
-DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 # Quick-start development settings - unsuitable for production
@@ -34,7 +32,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 # Application definition
 
 INSTALLED_APPS = [
