@@ -40,13 +40,13 @@ class Command(BaseCommand):
                                 content=contents_text,
                                 file_path=file.name,
                                 draft=json_obj['draft'],
-                                category=Category.objects.get(name=json_obj['categories'][0]),
+                                category=Category.objects.get(name__iexact=json_obj['categories'][0]),
                                 created_at=json_obj['date']
                             )
 
                             article_tags = Article.objects.get(id=article.id)
                             for tag_name in json_obj['tags']:
-                                tag = Tag.objects.get(name=tag_name)
+                                tag = Tag.objects.get(name__iexact=tag_name)
                                 article_tags.tags.add(tag)
 
                     elif options['action'] == 'modified':
@@ -56,7 +56,7 @@ class Command(BaseCommand):
                             article.title = json_obj['title']
                             article.content = contents_text
                             article.draft = json_obj['draft']
-                            article.category = Category.objects.get(name=json_obj['categories'][0])
+                            article.category = Category.objects.get(name__iexact=json_obj['categories'][0])
                             article.save()
 
                             article_tags = Article.objects.get(id=article.id)
@@ -64,7 +64,7 @@ class Command(BaseCommand):
                                 article_tags.tags.remove(tag)
 
                             for tag_name in json_obj['tags']:
-                                tag = Tag.objects.get(name=tag_name)
+                                tag = Tag.objects.get(name__iexact=tag_name)
                                 article_tags.tags.add(tag)
 
             else:
