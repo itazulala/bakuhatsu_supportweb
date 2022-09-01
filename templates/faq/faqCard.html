@@ -33,7 +33,7 @@
     </div>
     <div class="c-post-card__bottom">
       <div class="c-post-card__tag-container">
-        {% for tags in object.tags.all %}
+        {% for tags in faq.tags.all %}
         <span class="c-post-card__category-tag">#{{ tags.name }}</span>
         {% endfor %}
       </div>
