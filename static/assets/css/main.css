@@ -626,6 +626,7 @@ p:lang(en) {
 
 .c-request-form__items {
   margin-top: 20px;
+  cursor: none;
 }
 .c-request-form__items:first-child {
   margin-top: 0;
@@ -640,6 +641,7 @@ p:lang(en) {
   font-size: 14px;
   font-weight: 300;
   color: #323232;
+  cursor: auto;
 }
 .c-request-form__category-inner {
   position: relative;
@@ -683,7 +685,9 @@ p:lang(en) {
 }
 .c-request-form__input-textarea {
   width: 100%;
+  height: 18em;
   padding: 21px 18px;
+  line-height: 24px;
   background: #fff;
   border: 1px solid #d9e7ff;
   border-radius: 6px;
@@ -746,6 +750,10 @@ p:lang(en) {
   background: #f7faff;
   border: 1px solid #f7faff;
   border-radius: 5px;
+}
+.c-post-card__category-tag::before {
+  color: #0c3898;
+  content: "#";
 }
 .c-post-card__link {
   font-size: 14px;
@@ -1540,6 +1548,10 @@ p:lang(en) {
   overflow: hidden;
   background: #f1f5f9;
 }
+.p-keyword-search__container {
+  padding-top: 35px;
+  padding-bottom: 10px;
+}
 .p-keyword-search__form-inner {
   margin-top: 16px;
 }
@@ -1587,6 +1599,7 @@ p:lang(en) {
   width: 100vw;
   padding: 57px 0;
   margin: 0 calc(50% - 50vw);
+  margin-top: 31px;
 }
 .p-archive-pagination__wrapper {
   padding-top: 0.5em;

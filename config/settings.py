@@ -162,14 +162,18 @@ LOGGING = {
         # 自分で追加したアプリケーション全般のログを拾うロガー
         '': {
             'handlers': ['file'],
-            'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': False,
         },
         # Django自身が出力するログ全般を拾うロガー
         'django': {
             'handlers': ['file'],
-            'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
         },
     },
 }

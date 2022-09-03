@@ -1,67 +1,54 @@
 {% load static %}
 <section class="p-keyword-search">
   <div class="p-keyword-search__wrapper l-wrapper">
-    <h2 class="c-section-title" data-english-title="SEARCH">キーワード検索</h2>
-    <p class="c-section-title__subtext">キーワードで検索ができます。</p>
-    <div class="p-keyword-search__form-inner">
-      <form action="" class="c-search-form">
-        <input
-          type="text"
-          class="c-search-form__keyword"
-          placeholder="製品名〇〇〇〇〇〇をご入力ください。"
-        />
-        <div class="c-search-form__submit-inner">
+    <div class="p-keyword-search__container l-container">
+      <h2 class="c-section-title" data-english-title="SEARCH">キーワード検索</h2>
+      <p class="c-section-title__subtext">キーワードで検索ができます。</p>
+      <div class="p-keyword-search__form-inner">
+          {% if page_name == "search_contents_list" %}
+            <form action="{% url 'search_contents_list' %}" method="get" class="c-search-form">
+          {% endif %}
+          {% if page_name == "search_faq_list" %}
+            <form action="{% url 'search_faq_list' %}" method="get" class="c-search-form">
+          {% endif %}
           <input
-            class="c-search-form__submit"
-            type="image"
-            src="{% static '/assets/images/search.svg' %}"
-            alt="送信する"
-            width="55"
-            height="55"
+            type="text"
+            class="c-search-form__keyword"
+            name="keyword"
+            value="{{ request.GET.keyword}}"
+            placeholder="キーワードを入力してください。"
           />
-        </div>
-      </form>
-    </div>
-    <div class="c-repetition_keywords">
-      <h3 class="c-repetition_keywords__title">よく検索されるキーワード</h3>
-      <ul class="repetition_keywords">
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-        <li class="c-repetition_keywords__item">
-          <a class="c-repetition_keywords__link" data-hash="#">キーワードが入ります</a>
-        </li>
-      </ul>
+          <div class="c-search-form__submit-inner">
+            <input
+              class="c-search-form__submit"
+              type="image"
+              src="{% static '/assets/images/search.svg' %}"
+              alt="送信する"
+              width="55"
+              height="55"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="c-repetition_keywords">
+        <h3 class="c-repetition_keywords__title">よく検索されるキーワード</h3>
+        <ul class="c-repetition_keywords__inner">
+          {% if page_name == "search_contents_list" %}
+            {% for tags in tag_list %}
+              <li class="c-repetition_keywords__item">
+                <a href="{% url 'search_contents_list'%}?tag={{ tags.name }}" class="c-repetition_keywords__link" data-hash="#">{{ tags.name }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+          {% if page_name == "search_faq_list" %}
+            {% for tags in tag_list %}
+              <li class="c-repetition_keywords__item">
+                <a href="{% url 'search_faq_list'%}?tag={{ tags.name }}" class="c-repetition_keywords__link" data-hash="#">{{ tags.name }}</a>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

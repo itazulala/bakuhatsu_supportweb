@@ -76,6 +76,11 @@
     @include var.mq(lg) {
       font-size: 14px;
     }
+
+    &::before {
+      color: #0c3898;
+      content: '#';
+    }
   }
 
   &__link {

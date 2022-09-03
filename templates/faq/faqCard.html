@@ -34,7 +34,7 @@
     <div class="c-post-card__bottom">
       <div class="c-post-card__tag-container">
         {% for tags in faq.tags.all %}
-        <span class="c-post-card__category-tag">#{{ tags.name }}</span>
+        <a href="{% url 'search_faq_list'%}?tag={{ tags.name }}" class="c-post-card__category-tag">{{ tags.name }}</a>
         {% endfor %}
       </div>
       <div class="c-post-card__infomation-inner">
