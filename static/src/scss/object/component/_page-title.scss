@@ -13,14 +13,13 @@
     right: 0;
     bottom: -145px;
     font-family: Arial, sans-serif;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 700;
     color: rgb(12 56 152 / 5%);
     letter-spacing: -0.0655em;
     content: attr(data-english-title);
 
     @include var.mq(lg) {
-      right: -20%;
       bottom: -160px;
       font-size: 170px;
     }
