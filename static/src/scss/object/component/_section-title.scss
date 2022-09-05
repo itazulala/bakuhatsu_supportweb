@@ -35,6 +35,10 @@
 
   &__subtext {
     margin-top: 16px;
+
+    @include var.mq( lg) {
+      @include var.font-size(14);
+    }
   }
 }
 
