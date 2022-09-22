@@ -9,25 +9,29 @@ get:
       schema:
         type: float
       required: true
+      example: 2.8
       description: 爆風重量(kg)
     - in: query
       name: exp_er
       schema:
         type: float
       required: true
+      example: 1.5
       description: ER(TNT換算率)
     - in: query
       name: add_tnt
       schema:
         type: float
       required: true
+      example: 0.0
       description: 追加TNT重量(kg)
     - in: query
       name: meas_points
       schema:
-        type: array
+        type: string
       required: true
-      description: 測定距離(m)
+      example: 5, 7, 10, 14, 19
+      description: 測定距離(m)。カンマ区切り数字。何点でも可。
 
   responses:
     "200":

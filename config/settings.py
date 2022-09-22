@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'information.apps.InformationConfig',
     'widget_tweaks',
     'markdownx',
+    'rest_framework',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
