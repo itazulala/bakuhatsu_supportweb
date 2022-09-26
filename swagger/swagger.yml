@@ -1,0 +1,8 @@
+openapi: 3.0.0
+info:
+  title: 爆風電卓API
+  version: "1.0.0"
+
+paths:
+  /api/explosion/blast_calc:
+    $ref: ./blast_calc.yml

@@ -14,6 +14,7 @@ urlpatterns = [
    path('information/', include('information.urls'), name='information'),
    path('contact/', include('contact.urls'), name='contact'),
    path('markdownx/', include('markdownx.urls')),
+   path('api/', include('api.urls'), name='api'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -1,0 +1,68 @@
+get:
+  summary: 爆風電卓の計算結果を取得する
+  operationId: blast_calc
+  tags:
+    - explosion
+  parameters:
+    - in: query
+      name: exp_weight
+      schema:
+        type: float
+      required: true
+      example: 2.8
+      description: 爆風重量(kg)
+    - in: query
+      name: exp_er
+      schema:
+        type: float
+      required: true
+      example: 1.5
+      description: ER(TNT換算率)
+    - in: query
+      name: add_tnt
+      schema:
+        type: float
+      required: true
+      example: 0.0
+      description: 追加TNT重量(kg)
+    - in: query
+      name: meas_points
+      schema:
+        type: string
+      required: true
+      example: 5, 7, 10, 14, 19
+      description: 測定距離(m)。カンマ区切り数字。何点でも可。
+
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/BlastResult"
+    "400":
+      description: リクエストエラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    BlastResult:
+      type: object
+      properties:
+        results:
+          type: array
+          example: [[5.00, 1.08e+02, 2.95e+01], [6.00, 7.47e+01, 3.47e+01]]
+          description: 測定距離[m]、pio[kPaG]、toa+5ppd[ms]が格納された配列を格納した二次元配列
+        result_img:
+          type: string
+          format: binary
+          description: グラフ画像
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
