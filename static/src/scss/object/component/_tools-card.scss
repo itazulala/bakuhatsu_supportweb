@@ -1,0 +1,111 @@
+@use '../../global/' as var;
+
+.c-tools-card {
+  max-width: 590px;
+  padding: 18px;
+  background: var.$white;
+  border: 1px solid #d9e7ff;
+  border-radius: 19px;
+
+  @include var.mq( lg) {
+    padding: 25px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 21px;
+  }
+
+  &__title {
+    @include var.font-size(18);
+
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    @include var.mq(lg) {
+      @include var.font-size(20);
+    }
+
+    &::before {
+      display: inline;
+      content: attr(data-faq-title);
+    }
+  }
+
+  &__title-link {
+    color: var.$base-text-color;
+  }
+
+  &__help {
+    @include var.font-size(18);
+
+    display: inline-block;
+    margin-top: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    @include var.mq(lg) {
+      @include var.font-size(20);
+    }
+
+    &::before {
+      vertical-align: text-top;
+      content: url('/static/assets/images/help.svg');
+    }
+  }
+
+  &__help-link {
+    color: var.$base-text-color;
+
+    @include var.font-size(14);
+  }
+
+  &__middle {
+    padding-bottom: 21px;
+  }
+
+  &__text {
+    @include var.font-size(16);
+  }
+
+  &__middle-- &__bottom {
+    display: flex;
+    align-items: last baseline;
+    justify-content: right;
+    margin-top: 14px;
+
+    @include var.mq(lg) {
+      align-items: baseline;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+  }
+
+  &__bottom {
+    text-align: right;
+  }
+
+  &__bottom--link {
+    @include var.font-size(14);
+
+    align-items: end;
+    font-weight: 600;
+    color: var.$primary-color;
+    white-space: nowrap;
+
+    @include var.mq(lg) {
+      white-space: unset;
+    }
+
+    &::after {
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: text-top;
+      content: url('/static/assets/images/link-arrow.svg');
+    }
+  }
+}

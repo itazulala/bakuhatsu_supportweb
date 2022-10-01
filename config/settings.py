@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'markdownx',
     'rest_framework',
     'api.apps.ApiConfig',
+    'tools.apps.ToolsConfig',
 ]
 
 MIDDLEWARE = [
