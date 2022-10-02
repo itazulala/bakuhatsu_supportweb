@@ -37,8 +37,8 @@ class ArticleSearchList(ListView):
         print(tag)
         if keyword:
             queryset = Article.objects.filter(
-                Q(title__icontains=keyword) |
-                Q(content__icontains=keyword) |
+                Q(question__icontains=keyword) |
+                Q(answer__icontains=keyword) |
                 Q(tags__in=Tag.objects.filter(name__icontains=keyword))
             )
 
