@@ -1,0 +1,10 @@
+@use '../../../global/' as var;
+
+.p-tools-result {
+  margin-top: 38px;
+  margin-bottom: 65px;
+
+  &__wrapper {
+    max-width: 993px;
+  }
+}

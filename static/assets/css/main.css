@@ -701,6 +701,83 @@ p:lang(en) {
   color: #c9c9c9;
 }
 
+.c-request-form__items {
+  margin-top: 20px;
+  cursor: none;
+}
+.c-request-form__items:first-child {
+  margin-top: 0;
+}
+.c-request-form__items:last-child {
+  margin-top: 26px;
+  text-align: center;
+}
+.c-request-form__text {
+  display: block;
+  margin-bottom: 11px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #323232;
+  cursor: auto;
+}
+.c-request-form__category-inner {
+  position: relative;
+  display: inline;
+  margin-top: 11px;
+}
+.c-request-form__category-inner::after {
+  position: absolute;
+  top: 28px;
+  right: -126px;
+  display: inline-block;
+  content: url("/static/assets/images/link-arrow.svg");
+  transform: rotate(90deg);
+}
+.c-request-form__category {
+  position: relative;
+  display: block;
+  padding: 11px;
+  padding-right: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #0c3898;
+  cursor: pointer;
+  border: 1px solid #d9e7ff;
+  border-radius: 4px;
+}
+.c-request-form__input {
+  width: 100%;
+  padding: 16px 12px;
+  background: #fff;
+  border: 1px solid #d9e7ff;
+  border-radius: 6px;
+}
+.c-request-form__input::-moz-placeholder {
+  font-size: 16px;
+  color: #c9c9c9;
+}
+.c-request-form__input::placeholder {
+  font-size: 16px;
+  color: #c9c9c9;
+}
+.c-request-form__input-textarea {
+  width: 100%;
+  height: 18em;
+  padding: 21px 18px;
+  line-height: 24px;
+  background: #fff;
+  border: 1px solid #d9e7ff;
+  border-radius: 6px;
+}
+.c-request-form__input-textarea::-moz-placeholder {
+  font-size: 16px;
+  color: #c9c9c9;
+}
+.c-request-form__input-textarea::placeholder {
+  font-size: 16px;
+  color: #c9c9c9;
+}
+
 .c-post-card {
   padding: 18px;
   background: #fff;
@@ -769,7 +846,7 @@ p:lang(en) {
 }
 
 .c-tools-card {
-  max-width: 590px;
+  width: 590px;
   padding: 18px;
   background: #fff;
   border: 1px solid #d9e7ff;
@@ -1618,6 +1695,37 @@ p:lang(en) {
   font-size: 0.75rem;
 }
 
+.c-table-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  padding: 38px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.c-table {
+  width: 100%;
+}
+.c-table__head {
+  border-bottom: 1px solid #0c3898;
+}
+.c-table__head-title {
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 23px;
+  font-weight: 600;
+}
+.c-table__body-row:nth-child(1n+1) {
+  background-color: #f7faff;
+}
+.c-table__value {
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding: 16px;
+  font-weight: 400;
+  text-align: right;
+}
+
 .p-keyword-search {
   padding: 56px 0;
   margin-top: 56px;
@@ -1774,6 +1882,29 @@ p:lang(en) {
   margin-left: auto;
 }
 
+.p-formula {
+  padding: 56px 0;
+  margin-top: 56px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+.p-formula__container {
+  padding-top: 35px;
+  padding-bottom: 10px;
+}
+.p-formula__form-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+.p-formula__form-items {
+  align-self: baseline;
+  width: 472px;
+  margin-top: 20px;
+  cursor: none;
+}
+
 .p-tools-list {
   padding-top: 28px;
 }
@@ -1790,9 +1921,20 @@ p:lang(en) {
   gap: 16px;
   justify-content: center;
 }
+.p-tools-list__column:last-of-type {
+  margin-bottom: 32px;
+}
 .p-tools-list__button-inner {
   margin: 46px 0;
   text-align: center;
+}
+
+.p-tools-result {
+  margin-top: 38px;
+  margin-bottom: 65px;
+}
+.p-tools-result__wrapper {
+  max-width: 993px;
 }
 
 .u-sm-newline::before {
@@ -1919,6 +2061,30 @@ br {
   }
   .c-section-heading__title {
     font-size: 26px;
+  }
+  .c-request-form__items {
+    margin-top: 26px;
+  }
+  .c-request-form__items:last-child {
+    margin-top: 42px;
+  }
+  .c-request-form__text {
+    font-size: 18px;
+  }
+  .c-request-form__input {
+    padding: 21px 18px;
+  }
+  .c-request-form__input::-moz-placeholder {
+    font-size: 20px;
+  }
+  .c-request-form__input::placeholder {
+    font-size: 20px;
+  }
+  .c-request-form__input-textarea::-moz-placeholder {
+    font-size: 20px;
+  }
+  .c-request-form__input-textarea::placeholder {
+    font-size: 20px;
   }
   .c-request-form__items {
     margin-top: 26px;
@@ -2089,8 +2255,16 @@ br {
   .p-privacy-policy p {
     font-size: 16px;
   }
+  .p-formula__form-items {
+    margin-top: 26px;
+  }
+  .p-formula__form-items:nth-child(2n+1) {
+    margin-right: 36px;
+    margin-bottom: 32px;
+  }
   .p-tools-list__column:nth-child(2n+1):last-of-type {
-    margin-right: calc(50% - 64px);
+    margin-right: 50%;
+    margin-bottom: 32px;
   }
   .u-sm-newline::before {
     white-space: unset;

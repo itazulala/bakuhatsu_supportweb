@@ -1,0 +1,40 @@
+@use '../../../global/' as var;
+
+.p-formula {
+  padding: 56px 0;
+  margin-top: 56px;
+  overflow: hidden;
+  background: var.$bg-secondary-color;
+
+  // &__wrapper {}
+
+  &__container {
+    padding-top: 35px;
+    padding-bottom: 10px;
+  }
+
+  &__form-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  &__form-items {
+    align-self: baseline;
+    width: 472px;
+    margin-top: 20px;
+    cursor: none;
+
+    @include var.mq(lg) {
+      margin-top: 26px;
+    }
+
+    &:nth-child(2n+1) {
+      @include var.mq(lg) {
+        margin-right: 36px;
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

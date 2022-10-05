@@ -1,0 +1,51 @@
+// object/component/_table.scss
+@use '../../global' as var;
+
+.c-table-title {
+  @include var.font-size(24);
+
+  padding: 38px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.c-table {
+  width: 100%;
+
+  &__head {
+    border-bottom: 1px solid #0c3898;
+  }
+
+  &__head-title {
+    @include var.font-size(16);
+
+    padding: 23px;
+    font-weight: 600;
+  }
+
+  &__body {
+
+  }
+
+  &__body-row {
+    &:nth-child(1n+1) {
+      background-color: #f7faff;
+    }
+
+    &:last-child {
+
+    }
+  }
+
+  &__head-row {
+
+  }
+
+  &__value {
+    @include var.font-size(20);
+
+    padding: 16px;
+    font-weight: 400;
+    text-align: right;
+  }
+}

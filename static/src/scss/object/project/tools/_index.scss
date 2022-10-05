@@ -1,0 +1,5 @@
+// object/project/tools/_index.scss
+@use '../../../global' as var;
+@forward 'formula-form';
+@forward 'tools-list';
+@forward 'tools-result';

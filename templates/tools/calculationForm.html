@@ -1,0 +1,55 @@
+{% load static %}
+<section class="p-formula">
+  <div class="p-formula__wrapper l-wrapper">
+    <div class="p-formula__container l-container">
+      <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
+      <p class="c-section-title__subtext"></p>
+        <form action="" method="get" class="c-request-form">
+          {{ execution.parameters|json_script:'' }}
+          <div class="p-formula__form-inner l-flex">
+            <div class="p-formula__form-items">
+              <label class="c-request-form__text">爆薬重量（kg）</label>
+                <input
+                        type="text"
+                        class="c-request-form__input"
+                        name="exp_weight"
+                        value="{{ request.GET.keyword}}"
+                        placeholder="2.3"
+                />
+            </div>
+            <div class="p-formula__form-items">
+              <label class="c-request-form__text">ER（TNT換算率）</label>
+              <input
+                      type="text"
+                      class="c-request-form__input"
+                      name="exp_er"
+                      value="{{ request.GET.keyword}}"
+                      placeholder="0.85"
+              />
+            </div>
+            <div class="p-formula__form-items">
+              <label class="c-request-form__text">追加TNT重量（kg）</label>
+              <input
+                      type="text"
+                      class="c-request-form__input"
+                      name="add_tnt"
+                      value="{{ request.GET.keyword}}"
+                      placeholder="0.5"
+              />
+            </div>
+            <div class="p-formula__form-items">
+              <label class="c-request-form__text">測定距離（m）</label>
+              <input
+                      type="text"
+                      class="c-request-form__input"
+                      name="meas_points"
+                      value="{{ request.GET.keyword}}"
+                      placeholder="3,6,9,18"
+              />
+            </div>
+          </div>
+        </form>
+      </form>
+    </div>
+  </div>
+</section>
