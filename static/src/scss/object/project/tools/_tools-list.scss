@@ -1,0 +1,39 @@
+@use '../../../global/' as var;
+
+.p-tools-list {
+  padding-top: 28px;
+
+  &__list {
+    padding-bottom: 60px;
+  }
+
+  &__container {
+    padding-top: 35px;
+    padding-bottom: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__column {
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
+
+    &:nth-child(2n+1):last-of-type {
+      @include var.mq(lg) {
+        margin-right: 50%;
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__button-inner {
+    margin: 46px 0;
+    text-align: center;
+  }
+}
