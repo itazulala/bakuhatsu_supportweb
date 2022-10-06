@@ -4,55 +4,21 @@
     <div class="p-formula__container l-container">
       <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
       <p class="c-section-title__subtext"></p>
-        <form class="c-request-form">
-          <div class="p-formula__form-inner l-flex">
-            <div class="p-formula__form-items">
-              <label class="c-request-form__text">爆薬重量（kg）</label>
-                <input
-                        type="text"
-                        class="c-request-form__input"
-                        id="exp_weight"
-                        name="exp_weight"
-                        placeholder="2.3"
-                />
-            </div>
-            <div class="p-formula__form-items">
-              <label class="c-request-form__text">ER（TNT換算率）</label>
+      <form class="c-request-form">
+        <div class="p-formula__form-inner l-flex">
+          {% for parameter in parameter_list%}
+          <div class="p-formula__form-items">
+            <label class="c-request-form__text">{{ parameter.name }}</label>
               <input
                       type="text"
                       class="c-request-form__input"
-                      id="exp_er"
-                      name="exp_er"
-                      placeholder="0.85"
+                      id="{{ parameter.key_name }}"
+                      name="{{ parameter.key_name }}"
+                      placeholder="2.3"
               />
-            </div>
-            <div class="p-formula__form-items">
-              <label class="c-request-form__text">追加TNT重量（kg）</label>
-              <input
-                      type="text"
-                      class="c-request-form__input"
-                      id="add_tnt"
-                      name="add_tnt"
-                      placeholder="0.5"
-              />
-            </div>
-            <div class="p-formula__form-items">
-              <label class="c-request-form__text">測定距離（m）</label>
-              <input
-                      type="text"
-                      class="c-request-form__input"
-                      id="meas_points"
-                      name="meas_points"
-                      placeholder="3,6,9,18"
-              />
-            </div>
-            <div class="p-formula__form-submit">
-              <button type="button" onclick="calculationExec()" class="c-primary-button--fill">
-                計算結果を見る
-              </button>
-            </div>
           </div>
-        </form>
+          {% endfor %}
+        </div>
       </form>
     </div>
   </div>
