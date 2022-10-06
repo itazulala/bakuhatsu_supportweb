@@ -1,0 +1,43 @@
+[
+  {
+    "model": "tools.Application",
+    "fields": {
+      "name": "爆風電卓",
+      "action_url": "http://localhost:8000/api/explosion/blast_calc/",
+      "explanation": "爆発時の風圧をシミュレーションできるツールです。",
+      "help_url" :"http://localhost:8000/api/explosion/blast_calc/"
+    }
+  },
+  {
+    "model": "tools.parameter",
+    "fields": {
+      "name": "爆薬重量（kg）",
+      "key_name": "exp_weight",
+      "application_id": 1
+    }
+  },
+  {
+    "model": "tools.parameter",
+    "fields": {
+      "name": "ER（TNT換算率）",
+      "key_name": "exp_er",
+      "application_id": 1
+    }
+  },
+  {
+    "model": "tools.parameter",
+    "fields": {
+      "name": "追加TNT重量(kg) ",
+      "key_name": "add_tnt",
+      "application_id": 1
+    }
+  },
+  {
+    "model": "tools.parameter",
+    "fields": {
+      "name": "測定距離（m）",
+      "key_name": "meas_points",
+      "application_id": 1
+    }
+  }
+]
