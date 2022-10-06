@@ -33,3 +33,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('js-elem'); // トリガーになる要素を取得
+
+function calculationExec () {
+  const exp_weight = document.getElementById('exp_weight')
+  const exp_er = document.getElementById('exp_er')
+  const add_tnt = document.getElementById('add_tnt')
+  const meas_points = document.getElementById('meas_points')
+  const parameter = 'exp_weight=' + exp_weight.value + '&exp_er=' + exp_er.value + '&add_tnt=' + add_tnt.value + '&meas_points=' + meas_points.value
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://localhost:8000/api/explosion/blast_calc/?' + parameter, true);
+  xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+  xhr.send()
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+      const result_img = document.getElementById('result_img')
+      const res = JSON.parse(xhr.responseText)
+      result_img.src = 'data:image/png;base64,' + res.result_img
+
+      const body_row = document.getElementById("body_row")
+      res.results.forEach(function(array,index)  {
+        let element
+        if(index === 0) {
+          element = body_row
+        } else {
+          element = body_row.cloneNode(true)
+        }
+        array.forEach(function(value,index) {
+          if(index === 0) {
+            element.childNodes[index].innerText = value.toFixed(2)
+          } else {
+            element.childNodes[index].innerText = value.toExponential(2)
+          }
+
+        })
+        body_row.after(element);
+      })
+    }
+  }
+}

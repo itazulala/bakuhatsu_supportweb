@@ -701,83 +701,6 @@ p:lang(en) {
   color: #c9c9c9;
 }
 
-.c-request-form__items {
-  margin-top: 20px;
-  cursor: none;
-}
-.c-request-form__items:first-child {
-  margin-top: 0;
-}
-.c-request-form__items:last-child {
-  margin-top: 26px;
-  text-align: center;
-}
-.c-request-form__text {
-  display: block;
-  margin-bottom: 11px;
-  font-size: 14px;
-  font-weight: 300;
-  color: #323232;
-  cursor: auto;
-}
-.c-request-form__category-inner {
-  position: relative;
-  display: inline;
-  margin-top: 11px;
-}
-.c-request-form__category-inner::after {
-  position: absolute;
-  top: 28px;
-  right: -126px;
-  display: inline-block;
-  content: url("/static/assets/images/link-arrow.svg");
-  transform: rotate(90deg);
-}
-.c-request-form__category {
-  position: relative;
-  display: block;
-  padding: 11px;
-  padding-right: 30px;
-  font-size: 20px;
-  font-weight: 300;
-  color: #0c3898;
-  cursor: pointer;
-  border: 1px solid #d9e7ff;
-  border-radius: 4px;
-}
-.c-request-form__input {
-  width: 100%;
-  padding: 16px 12px;
-  background: #fff;
-  border: 1px solid #d9e7ff;
-  border-radius: 6px;
-}
-.c-request-form__input::-moz-placeholder {
-  font-size: 16px;
-  color: #c9c9c9;
-}
-.c-request-form__input::placeholder {
-  font-size: 16px;
-  color: #c9c9c9;
-}
-.c-request-form__input-textarea {
-  width: 100%;
-  height: 18em;
-  padding: 21px 18px;
-  line-height: 24px;
-  background: #fff;
-  border: 1px solid #d9e7ff;
-  border-radius: 6px;
-}
-.c-request-form__input-textarea::-moz-placeholder {
-  font-size: 16px;
-  color: #c9c9c9;
-}
-.c-request-form__input-textarea::placeholder {
-  font-size: 16px;
-  color: #c9c9c9;
-}
-
 .c-post-card {
   padding: 18px;
   background: #fff;
@@ -1904,6 +1827,9 @@ p:lang(en) {
   margin-top: 20px;
   cursor: none;
 }
+.p-formula__form-submit {
+  margin-top: 50px;
+}
 
 .p-tools-list {
   padding-top: 28px;
@@ -1912,6 +1838,7 @@ p:lang(en) {
   padding-bottom: 60px;
 }
 .p-tools-list__container {
+  width: 100%;
   padding-top: 35px;
   padding-bottom: 10px;
 }
@@ -2061,30 +1988,6 @@ br {
   }
   .c-section-heading__title {
     font-size: 26px;
-  }
-  .c-request-form__items {
-    margin-top: 26px;
-  }
-  .c-request-form__items:last-child {
-    margin-top: 42px;
-  }
-  .c-request-form__text {
-    font-size: 18px;
-  }
-  .c-request-form__input {
-    padding: 21px 18px;
-  }
-  .c-request-form__input::-moz-placeholder {
-    font-size: 20px;
-  }
-  .c-request-form__input::placeholder {
-    font-size: 20px;
-  }
-  .c-request-form__input-textarea::-moz-placeholder {
-    font-size: 20px;
-  }
-  .c-request-form__input-textarea::placeholder {
-    font-size: 20px;
   }
   .c-request-form__items {
     margin-top: 26px;

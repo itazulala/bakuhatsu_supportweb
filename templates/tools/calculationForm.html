@@ -4,16 +4,15 @@
     <div class="p-formula__container l-container">
       <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
       <p class="c-section-title__subtext"></p>
-        <form action="" method="get" class="c-request-form">
-          {{ execution.parameters|json_script:'' }}
+        <form class="c-request-form">
           <div class="p-formula__form-inner l-flex">
             <div class="p-formula__form-items">
               <label class="c-request-form__text">爆薬重量（kg）</label>
                 <input
                         type="text"
                         class="c-request-form__input"
+                        id="exp_weight"
                         name="exp_weight"
-                        value="{{ request.GET.keyword}}"
                         placeholder="2.3"
                 />
             </div>
@@ -22,8 +21,8 @@
               <input
                       type="text"
                       class="c-request-form__input"
+                      id="exp_er"
                       name="exp_er"
-                      value="{{ request.GET.keyword}}"
                       placeholder="0.85"
               />
             </div>
@@ -32,8 +31,8 @@
               <input
                       type="text"
                       class="c-request-form__input"
+                      id="add_tnt"
                       name="add_tnt"
-                      value="{{ request.GET.keyword}}"
                       placeholder="0.5"
               />
             </div>
@@ -42,10 +41,15 @@
               <input
                       type="text"
                       class="c-request-form__input"
+                      id="meas_points"
                       name="meas_points"
-                      value="{{ request.GET.keyword}}"
                       placeholder="3,6,9,18"
               />
+            </div>
+            <div class="p-formula__form-submit">
+              <button type="button" onclick="calculationExec()" class="c-primary-button--fill">
+                計算結果を見る
+              </button>
             </div>
           </div>
         </form>

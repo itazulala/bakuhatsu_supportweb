@@ -1,4 +1,4 @@
-from django.forms import ModelForm, TextInput, Textarea, HiddenInput
+from django.forms import ModelForm, TextInput, Textarea
 from .models import Request
 
 
