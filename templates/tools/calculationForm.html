@@ -4,18 +4,18 @@
     <div class="p-formula__container l-container">
       <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
       <p class="c-section-title__subtext"></p>
-      <form class="c-request-form">
+      <form class="c-request-form" id="request_form">
         <div class="p-formula__form-inner l-flex">
           {% for parameter in parameter_list%}
-          <div class="p-formula__form-items">
+            <div class="p-formula__form-items">
             <label class="c-request-form__text">{{ parameter.name }}</label>
-              <input
-                      type="text"
-                      class="c-request-form__input"
-                      id="{{ parameter.key_name }}"
-                      name="{{ parameter.key_name }}"
-                      placeholder="{{ parameter.placeholder}}"
-              />
+            <input
+                    type="text"
+                    class="c-request-form__input"
+                    id="{{ parameter.key_name }}"
+                    name="{{ parameter.key_name }}"
+                    placeholder="{{ parameter.placeholder}}"
+            />
           </div>
           {% endfor %}
           <div class="p-formula__form-submit">
