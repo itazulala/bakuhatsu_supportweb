@@ -58,7 +58,7 @@ function createQueryParameter (parameters) {
 
 function sendRequest (parameter) {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://127.0.0.1:8000/api/explosion/blast_calc/?' + parameter, false);
+  xhr.open('GET', location.protocol + '//' + location.host + '/api/explosion/blast_calc/?' + parameter, false);
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
   xhr.send()
   return xhr.responseText
@@ -89,7 +89,7 @@ function addTableRowValue (res) {
 function calculationExec () {
   const parameter = createQueryParameter(getFormValue(document.forms[0].elements))
   const res = JSON.parse(sendRequest(parameter))
-  console.log(res)
+  console.log(location.host)
   result_img.src = 'data:image/png;base64,' + res.result_img
   addTableRowValue(res)
 }
