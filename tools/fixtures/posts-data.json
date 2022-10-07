@@ -13,6 +13,7 @@
     "fields": {
       "name": "爆薬重量（kg）",
       "key_name": "exp_weight",
+      "placeholder": "2.8",
       "application_id": 1
     }
   },
@@ -21,6 +22,7 @@
     "fields": {
       "name": "ER（TNT換算率）",
       "key_name": "exp_er",
+      "placeholder": "1.5",
       "application_id": 1
     }
   },
@@ -29,6 +31,7 @@
     "fields": {
       "name": "追加TNT重量(kg) ",
       "key_name": "add_tnt",
+      "placeholder": "0.0",
       "application_id": 1
     }
   },
@@ -37,6 +40,7 @@
     "fields": {
       "name": "測定距離（m）",
       "key_name": "meas_points",
+      "placeholder": "5, 7, 10, 14, 19",
       "application_id": 1
     }
   }

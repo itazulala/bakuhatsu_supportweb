@@ -41,7 +41,7 @@ function calculationExec () {
   const meas_points = document.getElementById('meas_points')
   const parameter = 'exp_weight=' + exp_weight.value + '&exp_er=' + exp_er.value + '&add_tnt=' + add_tnt.value + '&meas_points=' + meas_points.value
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://localhost:8000/api/explosion/blast_calc/?' + parameter, true);
+  xhr.open('GET', 'http://127.0.0.1:8000/api/explosion/blast_calc/?' + parameter, true);
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
   xhr.send()
   xhr.onreadystatechange = function() {

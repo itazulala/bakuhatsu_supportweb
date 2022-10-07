@@ -14,6 +14,7 @@ class Application(models.Model):
 class Parameter(models.Model):
     name = models.CharField('名称', max_length=32)
     key_name = models.CharField('キー', max_length=32)
+    placeholder = models.CharField('プレースホルダー', max_length=32)
     application = models.ForeignKey(Application, on_delete=models.PROTECT)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)

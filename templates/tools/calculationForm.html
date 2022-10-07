@@ -14,10 +14,15 @@
                       class="c-request-form__input"
                       id="{{ parameter.key_name }}"
                       name="{{ parameter.key_name }}"
-                      placeholder="2.3"
+                      placeholder="{{ parameter.placeholder}}"
               />
           </div>
           {% endfor %}
+          <div class="p-formula__form-submit">
+            <button type="button" onclick="calculationExec()" class="c-primary-button--fill">
+              計算結果を見る
+            </button>
+          </div>
         </div>
       </form>
     </div>
