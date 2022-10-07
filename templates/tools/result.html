@@ -10,7 +10,7 @@
         <img src="" class="p-tools-result__image" id="result_img"/>
       </div>
       <h2 class="c-table-title">計算結果に基づく表グラフ</h2>
-      <table class="c-table">
+      <table class="c-table" id="result_table">
         <thead class="c-table__head">
           <tr class="c-table__head-row" id="result_row">
             <th class="c-table__head-title">測定距離[m]</th>
@@ -29,3 +29,15 @@
     </div>
   </section>
 </div>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    Vue.createApp({
+        el: '#app',
+        data(){
+            return {
+                message: 'Hello Axios',
+            }
+        },
+    }).mount('#app')
+</script>
