@@ -1815,6 +1815,9 @@ p:lang(en) {
   padding-top: 35px;
   padding-bottom: 10px;
 }
+.p-formula__form-message {
+  color: red;
+}
 .p-formula__form-inner {
   display: flex;
   flex-wrap: wrap;

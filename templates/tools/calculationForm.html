@@ -5,6 +5,7 @@
       <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
       <p class="c-section-title__subtext"></p>
       <form class="c-request-form" id="request_form">
+        <p class="p-formula__form-message" id="error_message"></p>
         <div class="p-formula__form-inner l-flex">
           {% for parameter in parameter_list%}
             <div class="p-formula__form-items">
@@ -15,6 +16,9 @@
                     id="{{ parameter.key_name }}"
                     name="{{ parameter.key_name }}"
                     placeholder="{{ parameter.placeholder}}"
+                    {% if  parameter.required%}
+                    required="required"
+                    {% endif %}
             />
           </div>
           {% endfor %}

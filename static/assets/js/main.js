@@ -61,7 +61,7 @@ function sendRequest (parameter) {
   xhr.open('GET', location.protocol + '//' + location.host + '/api/explosion/blast_calc/?' + parameter, false);
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
   xhr.send()
-  return xhr.responseText
+  return xhr
 }
 
 function addTableRowValue (res) {
@@ -74,7 +74,7 @@ function addTableRowValue (res) {
     } else {
       element = body_row.cloneNode(true)
     }
-    array.forEach(function(value,index) {
+    array.forEach(function(value, index) {
       if(index === 0) {
         element.childNodes[index].innerText = value.toFixed(2)
       } else {
@@ -86,10 +86,35 @@ function addTableRowValue (res) {
   })
 }
 
+//エラーメッセージを返却する
+function error (result) {
+  const error_message = document.getElementById('error_message')
+  let errorMessage = ''
+  Object.keys(result).forEach(function(key) {
+    errorMessage += key + ':'
+    result[key].forEach(function(value, index) {
+      errorMessage += value
+      if (index < result.length ) {
+        errorMessage += ', '
+      } else {
+        errorMessage += '\n'
+      }
+    })
+  })
+  console.log(errorMessage)
+  error_message.innerText = errorMessage
+}
+
+//計算結果を返却する
 function calculationExec () {
   const parameter = createQueryParameter(getFormValue(document.forms[0].elements))
-  const res = JSON.parse(sendRequest(parameter))
-  console.log(location.host)
+  const res = sendRequest(parameter)
+  const result = JSON.parse(res.responseText)
+
+  if (res.status === 400) {
+    error(result)
+    return
+  }
   result_img.src = 'data:image/png;base64,' + res.result_img
   addTableRowValue(res)
 }

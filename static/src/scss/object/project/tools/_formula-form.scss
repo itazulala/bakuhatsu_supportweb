@@ -13,6 +13,10 @@
     padding-bottom: 10px;
   }
 
+  &__form-message {
+    color: red;
+  }
+
   &__form-inner {
     display: flex;
     flex-wrap: wrap;
