@@ -69,6 +69,13 @@ function sendRequest (parameter) {
 function addTableRowValue (res) {
   const body_row = document.getElementById("body_row")
   const table_body = document.getElementById("table_body")
+
+  const base_element = body_row.cloneNode(true)
+  while (table_body.firstChild) {
+    table_body.removeChild(table_body.firstChild)
+  }
+  table_body.appendChild(base_element)
+
   res.results.forEach(function(array,index)  {
     let element
     if(index === 0) {
@@ -92,6 +99,13 @@ function addTableRowValue (res) {
 function error (result) {
   const message_area = document.getElementById('message_area')
   const error_message = document.getElementById('error_message')
+
+  const base_element = error_message.cloneNode(true)
+  while (message_area.firstChild) {
+    message_area.removeChild(message_area.firstChild)
+  }
+  message_area.appendChild(base_element)
+
   Object.keys(result).forEach(function(key, index) {
 
     let element
@@ -125,6 +139,6 @@ function calculationExec () {
     error(result)
     return
   }
-  result_img.src = 'data:image/png;base64,' + res.result_img
-  addTableRowValue(res)
+  result_img.src = 'data:image/png;base64,' + result.result_img
+  addTableRowValue(result)
 }
