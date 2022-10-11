@@ -1805,32 +1805,33 @@ p:lang(en) {
   margin-left: auto;
 }
 
-.p-formula {
+.p-formula-form {
   padding: 56px 0;
   margin-top: 56px;
   overflow: hidden;
   background: #f1f5f9;
 }
-.p-formula__container {
+.p-formula-form__container {
   padding-top: 35px;
   padding-bottom: 10px;
 }
-.p-formula__form-message {
+.p-formula-form__message_error {
+  line-height: 24px;
   color: red;
 }
-.p-formula__form-inner {
+.p-formula-form__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 16px;
 }
-.p-formula__form-items {
+.p-formula-form__items {
   align-self: baseline;
   width: 472px;
   margin-top: 20px;
   cursor: none;
 }
-.p-formula__form-submit {
+.p-formula-form__submit {
   margin-top: 50px;
 }
 
@@ -2161,10 +2162,10 @@ br {
   .p-privacy-policy p {
     font-size: 16px;
   }
-  .p-formula__form-items {
+  .p-formula-form__items {
     margin-top: 26px;
   }
-  .p-formula__form-items:nth-child(2n+1) {
+  .p-formula-form__items:nth-child(2n+1) {
     margin-right: 36px;
     margin-bottom: 32px;
   }

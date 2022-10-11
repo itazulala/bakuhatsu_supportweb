@@ -5,10 +5,12 @@
       <h2 class="c-section-title" data-english-title="FORMULA">計算式</h2>
       <p class="c-section-title__subtext"></p>
       <form class="c-request-form" id="request_form">
-        <p class="p-formula__form-message" id="error_message"></p>
-        <div class="p-formula__form-inner l-flex">
+        <div class="p-request-form__message-inner" id="message_area">
+          <p class="p-formula-form__message_error" id="error_message"></p>
+        </div>
+        <div class="p-formula-form__inner l-flex">
           {% for parameter in parameter_list%}
-            <div class="p-formula__form-items">
+            <div class="p-formula-form__items">
             <label class="c-request-form__text">{{ parameter.name }}</label>
             <input
                     type="text"
@@ -22,7 +24,7 @@
             />
           </div>
           {% endfor %}
-          <div class="p-formula__form-submit">
+          <div class="p-formula-form__submit">
             <button type="button" onclick="calculationExec()" class="c-primary-button--fill">
               計算結果を見る
             </button>

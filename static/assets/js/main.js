@@ -1,3 +1,5 @@
+const BLAST_CLAC_KEYS = { exp_weight: '爆薬重量（kg）', exp_er: 'ER（TNT換算率）', add_tnt: '追加TNT重量（kg）', meas_points: '測定距離（m）' }
+
 document.addEventListener('DOMContentLoaded', () => {
   function tabClick(e) {
     //クリックされたtabのデータ属性を取得
@@ -88,21 +90,29 @@ function addTableRowValue (res) {
 
 //エラーメッセージを返却する
 function error (result) {
+  const message_area = document.getElementById('message_area')
   const error_message = document.getElementById('error_message')
-  let errorMessage = ''
-  Object.keys(result).forEach(function(key) {
-    errorMessage += key + ':'
+  Object.keys(result).forEach(function(key, index) {
+
+    let element
+    let errorMessage = ''
+
+    if(index === 0) {
+      element = error_message
+    } else {
+      element = error_message.cloneNode(true)
+    }
+
+    errorMessage += BLAST_CLAC_KEYS[key] + ':'
     result[key].forEach(function(value, index) {
       errorMessage += value
       if (index < result.length ) {
         errorMessage += ', '
-      } else {
-        errorMessage += '\n'
       }
     })
+    element.innerText = errorMessage
+    message_area.lastChild.after(element)
   })
-  console.log(errorMessage)
-  error_message.innerText = errorMessage
 }
 
 //計算結果を返却する
