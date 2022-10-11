@@ -1,13 +1,14 @@
 @use '../../global/' as var;
 
 .c-tools-card {
-  width: 590px;
+  width: 360px;
   padding: 18px;
   background: var.$white;
   border: 1px solid #d9e7ff;
   border-radius: 19px;
 
-  @include var.mq( lg) {
+  @include var.mq(lg) {
+    width: 590px;
     padding: 25px;
   }
 

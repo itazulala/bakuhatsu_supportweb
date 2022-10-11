@@ -769,7 +769,7 @@ p:lang(en) {
 }
 
 .c-tools-card {
-  width: 590px;
+  width: 360px;
   padding: 18px;
   background: #fff;
   border: 1px solid #d9e7ff;
@@ -2036,6 +2036,7 @@ br {
     white-space: unset;
   }
   .c-tools-card {
+    width: 590px;
     padding: 25px;
   }
   .c-tools-card__title {
